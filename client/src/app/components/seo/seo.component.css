@@ -1,0 +1,18 @@
+
+.seo_wrap{
+    text-align: center;
+    padding-top: 70px;
+    padding-bottom: 60px;
+}
+.seo_wrap h4{
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 26px;
+}
+.seo_wrap p{
+    color: #999;
+    font-size: 14px;
+}
+.seo_wrap p:nth-child(3){
+    margin-top: 20px;
+}

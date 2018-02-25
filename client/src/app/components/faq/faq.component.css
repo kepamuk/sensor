@@ -1,0 +1,107 @@
+
+.faq{
+    background-image: url('/assets/img/confidenceBack.jpg');
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+    margin-top: 34px;
+}
+.faq_wrap{
+    max-width: 540px;
+    margin: 0 auto;
+}
+.faq_wrap h2{
+    margin-top: 28px;
+}
+.panel-group{
+    margin-top: 58px;
+}
+.panel-group .panel-title{
+    /*margin-bottom: 14px;*/
+
+}
+.panel-group .panel-title div{
+    cursor: pointer;
+}
+.panel-group .panel-title div span:last-child{
+    font-family: 'PTSans-Bold';
+    font-size: 18px;
+    padding-left: 10px;
+    display: inline-block;
+    vertical-align: top;
+    width: calc(100% - 30px);
+}
+.panel-group .panel-title div span:first-child{
+    background-image: url('/assets/img/plusAcc.png');
+    background-repeat: no-repeat;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 4px;
+}
+.panel-group .panel-title div:not(.collapsed) span:first-child{
+    background-position: -16px 0;
+}
+.panel-group .panel-body{
+    font-size: 14px;
+    padding-left: 30px;
+    padding-top: 14px;
+}
+.panel-default>.panel-heading{
+    /*color: transparent;*/
+    background-color: transparent;
+    border-color: transparent;
+}
+.panel-default>.panel-heading+.panel-collapse>.panel-body{
+    border-top-color: transparent;
+}
+.panel {
+     margin-bottom: 0;
+     background-color: transparent;
+     border: none;
+     border-radius: 0;
+     -webkit-box-shadow: none;
+     box-shadow: none;
+}
+
+.acc_line{
+    height: 5px;
+    width: 100%;
+    background: #fff;
+    margin: 24px 0;
+}
+.faq_wrap .btn_wrap{
+    margin-bottom: 30px;
+}
+
+
+.collapse {
+    display: none
+}
+
+.collapse.in {
+    display: block
+}
+
+tr.collapse.in {
+    display: table-row
+}
+
+tbody.collapse.in {
+    display: table-row-group
+}
+.collapsing {
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    -webkit-transition-property: height, visibility;
+    -o-transition-property: height, visibility;
+    transition-property: height, visibility;
+    -webkit-transition-duration: .35s;
+    -o-transition-duration: .35s;
+    transition-duration: .35s;
+    -webkit-transition-timing-function: ease;
+    -o-transition-timing-function: ease;
+    transition-timing-function: ease
+}

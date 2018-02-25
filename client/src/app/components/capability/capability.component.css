@@ -1,0 +1,68 @@
+.capability {
+    background-image: url('/assets/img/capabilityBack.png');
+    background-repeat: no-repeat;
+    background-position: 0 -120px;
+    padding-bottom: 30px;
+    position: relative;
+    z-index: 1;
+    height: 860px;
+}
+
+.capability h2 {
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+.capability ul {
+    margin-top: 10px;
+}
+
+.capability ul li {
+    padding-left: 44px;
+    font-size: 14px;
+    margin-bottom: 30px;
+    background-repeat: no-repeat;
+    background-position: 0 4px;
+}
+
+.capability ul li:nth-child(1) {
+    background-image: url('/assets/img/capability1.png');
+}
+
+.capability ul li:nth-child(2) {
+    background-image: url('/assets/img/capability2.png');
+}
+
+.capability ul li:nth-child(3) {
+    background-image: url('/assets/img/capability3.png');
+}
+
+.capability ul li:nth-child(4) {
+    background-image: url('/assets/img/capability4.png');
+}
+
+.capability ul li:nth-child(5) {
+    background-image: url('/assets/img/capability5.png');
+}
+
+.capability ul li:nth-child(6) {
+    background-image: url('/assets/img/capability6.png');
+}
+
+.capability ul li:nth-child(7) {
+    background-image: url('/assets/img/capability7.png');
+}
+
+.capability ul li h5 {
+    font-family: 'PTSans-Bold';
+    font-size: 14px;
+}
+
+.capability ul li p {
+    font-size: 14px;
+}
+
+.capability_img {
+    margin-top: 46px;
+    max-width: 100%;
+}

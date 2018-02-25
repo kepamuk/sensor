@@ -1,0 +1,106 @@
+.popular-sensor {
+    margin-top: 48px;
+}
+
+.popular-sensor h2 {
+    margin-bottom: 28px;
+}
+
+.popular-img {
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    overflow: hidden;
+    height: 250px;
+}
+
+.sensor-block h4 {
+    color: #000;
+    font-family: 'PTSans-Bold';
+    font-size: 22px;
+    margin: 18px 0 2px;
+}
+
+.sensor-block p {
+    font-family: 'PTSans-Bold';
+    font-size: 18px;
+    color: #333333;
+    margin-bottom: 5px;
+}
+
+.sensor-block small {
+    color: #333333;
+    font-size: 14px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.sensor-block a.characteristic {
+    font-size: 14px;
+    color: #0093d1;
+    display: inline-block;
+    text-decoration: underline;
+}
+
+.sensor-block > a.characteristic:hover {
+    text-decoration: none;
+}
+
+.sensor-price {
+    margin-top: 30px;
+}
+
+.sensor-price__left {
+    width: 50%;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.sensor-price__left p {
+    color: #333333;
+    font-family: 'PTSans-Bold';
+}
+
+.sensor-price__left p span {
+    color: #00573d;
+}
+
+.sensor-price .btn-blue {
+    vertical-align: middle;
+}
+
+.sensor-block .present {
+    display: block;
+    text-align: center;
+    margin-top: 24px;
+    font-size: 14px;
+    color: #0093d1;
+    text-decoration: underline;
+}
+
+.sensor-block > a.present:hover {
+    text-decoration: none;
+}
+.btn-present {
+    width: 220px;
+    height: 40px;
+    background-color: #dc373d;
+    border-radius: 5px;
+    margin: 20px auto 0;
+    display: block;
+}
+
+.btn-present img {
+    margin-top: -14px;
+}
+
+.btn-present span {
+    color: #fff;
+    vertical-align: top;
+    margin-top: 10px;
+    display: inline-block;
+    text-decoration: underline;
+}
+
+.btn-present:hover span {
+    text-decoration: none;
+}

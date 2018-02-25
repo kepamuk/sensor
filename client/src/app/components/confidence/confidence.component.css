@@ -1,0 +1,96 @@
+
+.confidence {
+    margin-top: 54px;
+    background-image: url('/assets/img/confidenceBack.jpg');
+    background-repeat: no-repeat;
+    background-color: #ebf5ff;
+    background-size: cover;
+    padding-bottom: 56px;
+}
+
+.confidence h2 {
+    margin-top: 24px;
+}
+
+.slick-confidence {
+    margin-top: 10px;
+}
+
+.slick-prev {
+    left: -14px;
+}
+
+.slick-next {
+    right: -14px;
+    transform: rotate(180deg);
+}
+
+.slick-prev,
+.slick-next {
+    position: absolute;
+    top: 50%;
+    cursor: pointer;
+    z-index: 9;
+    font-size: 30px;
+    margin-top: -16px;
+    color: #0093d1;
+}
+
+.slick-confidence__slide {
+    outline: none;
+    text-align: center;
+}
+
+.slick-confidence__slide img {
+    margin: 0 auto;
+}
+
+.confidence-line {
+    height: 9px;
+    background: #fff;
+    margin-top: 28px;
+    margin-bottom: 32px;
+}
+
+.confidence h3 {
+    font-size: 20px;
+}
+
+.confidence p {
+    margin-top: 18px;
+}
+
+.confidence ul {
+    margin-top: 38px;
+    margin-left: 84px;
+    margin-bottom: 38px;
+}
+
+.confidence ul li:nth-child(1) {
+    background-image: url('/assets/img/confidence1.png');
+}
+
+.confidence ul li:nth-child(2) {
+    background-image: url('/assets/img/confidence2.png');
+}
+
+.confidence ul li:nth-child(3) {
+    background-image: url('/assets/img/confidence3.png');
+}
+
+.confidence ul li:nth-child(4) {
+    background-image: url('/assets/img/confidence4.png');
+}
+
+.confidence ul li {
+    padding-left: 44px;
+    font-size: 14px;
+    margin-bottom: 30px;
+    background-repeat: no-repeat;
+    background-position: 0 4px;
+}
+
+.confidence ul li p {
+    margin: 0;
+    font-family: 'PTSans-Bold';
+}

@@ -1,0 +1,46 @@
+.header-menu {
+    margin: 38px 0;
+}
+
+.logo {
+    width: 221px;
+    height: 64px;
+    background-image: url('/assets/img/logo.png');
+    background-position: 0 0;
+    background-size: cover;
+    display: block;
+}
+
+.number {
+    font-family: 'PTSans-Bold';
+    font-size: 30px;
+    color: #333;
+}
+
+.header-menu p {
+    font-size: 14px;
+}
+
+.contact i {
+    color: #999;
+}
+
+.contact a {
+    color: #0093d1;
+    font-size: 16px;
+    text-decoration: underline;
+}
+
+.contact a:hover {
+    text-decoration: none;
+}
+
+@media screen and (min-width: 766px) {
+    .menu_bar {
+        display: none;
+    }
+
+    .menu_m {
+        display: none !important;
+    }
+}

@@ -1,0 +1,38 @@
+/* You can add global styles to this file, and also import other style files */
+html,
+body{
+    font-family: 'PTSans-Regular';
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+h2 {
+    font-size: 36px;
+    font-family: 'PTSans-Bold';
+    text-align: center;
+}
+
+input,
+a,
+button,
+textarea{
+    outline: none;
+}
+
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+a:focus, a:hover{
+    text-decoration: none;
+}
+
+.btn_wrap {
+    text-align: center;
+    margin-top: 18px;
+}
