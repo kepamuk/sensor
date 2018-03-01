@@ -28,6 +28,15 @@ import {SeoComponent} from './components/seo/seo.component';
 import {FooterComponent} from './components/footer/footer.component';
 import {BtnLinkComponent} from './shared/componentsElements/btn/btn-link.component';
 import {BtnButtonComponent} from './shared/componentsElements/btn/btn-button.component';
+import {ContactsService} from './services/contacts.service';
+import {HttpClientModule} from '@angular/common/http';
+import {Ng2PageScrollModule} from 'ng2-page-scroll';
+import {GoodsService} from './services/goods.service';
+import {FormsModule} from '@angular/forms';
+import {TextMaskModule} from 'angular2-text-mask';
+import {SenderService} from './services/sender.service';
+import {ContentService} from './services/content.service';
+import { QuestionFormComponent } from './shared/componentsElements/question-form/question-form.component';
 
 
 @NgModule({
@@ -51,17 +60,29 @@ import {BtnButtonComponent} from './shared/componentsElements/btn/btn-button.com
         TableComponent,
         FaqComponent,
         SeoComponent,
-        FooterComponent
+        FooterComponent,
+        QuestionFormComponent
     ],
     imports: [
         BrowserModule,
         Angular2FontawesomeModule,
         NgxCarouselModule,
         SlickModule.forRoot(),
-        NgxGalleryModule
+        NgxGalleryModule,
+        HttpClientModule,
+        Ng2PageScrollModule,
+        FormsModule,
+        TextMaskModule
     ],
-    providers: [],
-    bootstrap: [AppComponent]
+    providers: [
+        ContactsService,
+        GoodsService,
+        SenderService,
+        ContentService
+    ],
+    bootstrap: [
+        AppComponent
+    ]
 })
 export class AppModule {
 }

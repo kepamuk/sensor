@@ -6,6 +6,9 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 
 const contacts = require('./routes/contacts')(router);
+const goods = require('./routes/goods')(router);
+const sender = require('./routes/sender')(router);
+const content = require('./routes/content')(router);
 
 const port = process.env.PORT || 8080;
 
@@ -24,6 +27,9 @@ app.use(bodyParser.json());
 app.use(express.static(__dirname + '../client/public_html'));
 
 app.use('/api/contacts', contacts);
+app.use('/api/sender', sender);
+app.use('/api/goods', goods);
+app.use('/api/content', content);
 
 // app.get('*',(req,res) => {
 //     res.sendFile(path.join(__dirname + '../../public_html/index.html'))

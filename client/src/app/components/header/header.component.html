@@ -19,27 +19,112 @@
             </div>
             <div class="clearf"></div>
             <div class="col-md-3 col-sm-6">
-                <a href="tel:+8 800 200 00 79" class="number">8 800 200 00 79</a>
-                <p>Отвечаем ежедневно с 10 до 18</p>
+                <a href="tel:{{contacts?.phoneNumber}}" class="number">{{contacts?.phoneNumber}}</a>
+                <p>Отвечаем ежедневно с {{contacts?.workTimeFrom}} до {{contacts?.workTimeTo}}</p>
             </div>
             <div class="col-md-2 col-sm-4 hidden-xs">
                 <div class="contact">
                     <i class="fa fa-envelope-o fa-lg" aria-hidden="true"></i>
-                    <a href="mailto:info@smartstol.ru">info@smartstol.ru</a>
+                    <a href="mailto:{{contacts?.email}}">{{contacts?.email}}</a>
                 </div>
                 <p>Пишите круглосуточно!</p>
             </div>
             <div class="col-md-2 col-sm-4">
-                <div class="contact">
+                <div class="contact"
+                     pageScroll
+                     href="#map">
                     <i class="fa fa-map-marker fa-lg" aria-hidden="true"></i>
-                    <a href="mailto:info@smartstol.ru">Наш адрес</a>
+                    <span>Наш адрес</span>
                 </div>
                 <p>Доставка по всей России!</p>
             </div>
             <div class="col-md-2 col-sm-4">
-                <app-btn [styles]="{'background-color': 'transparent'}"
-                         [hover]="{'background-color': '#0093d1', 'color': '#fff'}">Отправить заявку</app-btn>
+                <app-button data-toggle="modal"
+                            data-target="#tata"
+                            [styles]="{'background-color': 'transparent', 'color': '#0093d1'}"
+                            [hover]="{'background-color': '#0093d1', 'color': '#fff'}">Отправить заявку
+                </app-button>
             </div>
         </div>
     </div>
 </header>
+
+<div class="modal-h modal fade"
+     id="tata"
+     tabindex="-1"
+     role="dialog"
+     aria-labelledby="exampleModalLongTitle"
+     aria-hidden="true">
+    <div class="modal-dialog"
+         role="document">
+        <form class="modal-content popup_3"
+              #f="ngForm"
+              (ngSubmit)="onSubmit(f)"
+              novalidate>
+            <button type="button"
+                    class="close"
+                    data-dismiss="modal"
+                    aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="popular-img">
+                <img src="{{goods?.img}}" alt="">
+            </div>
+            <div class="popup3_part">
+                <h4>{{goods?.name}}</h4>
+                <!--<a href="#" class="present">+ подарок на сумму 19 800 Р</a>-->
+                <!--<div class="sensor-price__left">-->
+                    <!--<label *ngFor="let s of goods['sizes']">-->
+                        <!--<input name="options"-->
+                               <!--ng-control="options"-->
+                               <!--type="radio"-->
+                               <!--[value]="s"-->
+                               <!--[(ngModel)]="options">-->
+                        <!--{{s.size}}" от-->
+                        <!--<span>-->
+                            <!--<span>{{s.price}}</span>-->
+                            <!--₽-->
+                        <!--</span>-->
+                    <!--</label>-->
+                <!--</div>-->
+                <input class="input_form"
+                       type="text"
+                       placeholder="Ваше имя"
+                       name="name"
+                       ngModel
+                       #name="ngModel">
+                <input class="input_form"
+                       type="text"
+                       placeholder="Номер телефона"
+                       name="phone"
+                       ngModel
+                       #phone="ngModel"
+                       [textMask]="{mask: mask}"
+                       pattern="8((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}"
+                       required>
+                <div *ngIf="phone.invalid && (phone.dirty || phone.touched)"
+                     class="alert-danger">
+                    <div *ngIf="phone.errors.required">
+                        Phone is required.
+                    </div>
+                    <div *ngIf="phone.errors.pattern">
+                        Phone is not valid.
+                    </div>
+                </div>
+            </div>
+            <div class="btn_wrap">
+                <div *ngIf="message"
+                     class="alert alert-{{message.status}}">
+                    {{message.message}}
+                </div>
+                <!--[disabled]="f.invalid"-->
+                <app-button
+                        [disabled]="f.invalid"
+                        [styles]="{'background-color': '#0093d1', 'color': '#fff','min-width':'140px'}"
+                        [hover]="{'background-color': 'transparent', 'color': '#0093d1'}">
+                    Заказать
+                </app-button>
+            </div>
+        </form>
+    </div>
+</div>

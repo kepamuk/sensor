@@ -3,7 +3,7 @@ mongoose.Promise = global.Promise;
 const Schema = mongoose.Schema;
 
 const contactsSchema = new Schema({
-    phoneNumber: {type: String}
+    phoneNumber: {type: Number}
 });
 
 module.exports = mongoose.model('Contacts', contactsSchema);

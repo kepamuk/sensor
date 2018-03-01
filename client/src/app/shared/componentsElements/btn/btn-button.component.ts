@@ -5,7 +5,9 @@ import {Component, Input} from '@angular/core';
     template: `
         <button class="btn"
                 [ngStyle]="styles"
-                [appHover]="hover">
+                [appHover]="hover"
+                [appStyle]="styles"
+                [disabled]="disabled">
             <ng-content></ng-content>
         </button>
     `,
@@ -40,6 +42,7 @@ export class BtnButtonComponent {
     @Input() styles;
     @Input() hover;
     @Input() template;
+    @Input() disabled;
 
     constructor() {
 

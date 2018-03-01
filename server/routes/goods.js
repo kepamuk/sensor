@@ -1,9 +1,9 @@
-const Contacts = require('../models/contacts');
+const Goods = require('../models/goods');
 
 module.exports = (router) => {
 
-    router.get('/getContacts', (req, res) => {
-        Contacts.find({}, function(err, posts){
+    router.get('/getGoods', (req, res) => {
+        Goods.find({}, function(err, posts){
             if (err) {
                 console.log('Error getting the posts');
             } else {
