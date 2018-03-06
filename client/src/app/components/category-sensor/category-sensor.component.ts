@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {SliderService} from '../../services/slider.service';
 
 @Component({
     selector: 'app-category-sensor',
@@ -7,8 +8,13 @@ import {Component, OnInit} from '@angular/core';
 })
 export class CategorySensorComponent implements OnInit {
 
-    constructor() {
+    slider: any = [];
 
+    constructor(private sliderService: SliderService) {
+        this.sliderService.getSliders()
+            .subscribe((data) => {
+                this.slider = data[0]['category-sensor'];
+            });
     }
 
     ngOnInit(): void {

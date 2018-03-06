@@ -34,14 +34,15 @@
     display: block;
 }
 
-.sensor-block a.characteristic {
+.sensor-block .characteristic {
     font-size: 14px;
     color: #0093d1;
     display: inline-block;
     text-decoration: underline;
+    cursor: pointer;
 }
 
-.sensor-block > a.characteristic:hover {
+.sensor-block > .characteristic:hover {
     text-decoration: none;
 }
 
@@ -75,9 +76,10 @@
     font-size: 14px;
     color: #0093d1;
     text-decoration: underline;
+    cursor: pointer;
 }
 
-.sensor-block > a.present:hover {
+.sensor-block > .present:hover {
     text-decoration: none;
 }
 .btn-present {
@@ -89,18 +91,51 @@
     display: block;
 }
 
-.btn-present img {
-    margin-top: -14px;
-}
-
-.btn-present span {
-    color: #fff;
-    vertical-align: top;
-    margin-top: 10px;
-    display: inline-block;
-    text-decoration: underline;
-}
-
 .btn-present:hover span {
     text-decoration: none;
 }
+
+.char_block{
+    overflow: hidden;
+}
+
+.my-model-calc{
+    margin-top: 60px;
+}
+.my-model-calc h3 {
+    font-size: 26px;
+    font-family: 'PTSans-Bold';
+}
+
+.my-model-calc p {
+    max-width: 600px;
+    font-size: 16px;
+    margin-top: 6px;
+    margin-bottom: 28px;
+}
+
+
+
+.popup_2{
+    max-width: 720px;
+    background-color: #fff;
+    text-align: center;
+}
+.popup_2 h2{
+    font-family: 'PTSans-Bold';
+    font-size: 30px;
+    line-height: 30px;
+    text-transform: uppercase;
+}
+.popup_2 p{
+    margin-top: 20px;
+    font-family: 'PTSans-Bold';
+    font-size: 16px;
+}
+.popup_2 h3{
+    font-family: 'PTSans-Bold';
+    font-size: 30px;
+    line-height: 30px;
+}
+
+

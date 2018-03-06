@@ -1,43 +1,52 @@
 <footer>
-  <div id="map" class="map">
-    <div class="back_footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-4 col-xs-12">
-            <address>
-              <h3>Контакты</h3>
-              <a href="tel:+8 800 200 00 79" class="number">8 800 200 00 79</a>
-              <p>Бесплатные звонки по РФ</p>
-              <a href="mailto:info@smartstol.ru" class="mail">info@smartstol.ru</a>
-              <p>198176, Санкт-Петербург</p>
-              <p>г. Санкт-петербург, Заставская ул, д. 7, офис 401-402</p>
-            </address>
-          </div>
-        </div>
-      </div>
-      <div class="back_footer2">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-3 col-md-4 col-sm-5">
-              <p>© Smartstol.ru 2017. Все права защищены.</p>
+    <div id="map"
+         class="map">
+        <agm-map [latitude]="lat"
+                 [longitude]="lng"
+                 [zoom]="14"
+                 [disableDefaultUI]="false"
+                 [zoomControl]="false">
+            <agm-marker [latitude]="lat"
+                        [longitude]="lng"></agm-marker>
+        </agm-map>
+
+        <div class="back_footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4 col-xs-12">
+                        <address>
+                            <h3>Контакты</h3>
+                            <a href="tel:{{contacts?.phoneNumber}}" class="number">{{contacts?.phoneNumber}}</a>
+                            <p>Бесплатные звонки по РФ</p>
+                            <a href="mailto:{{contacts?.email}}" class="mail">{{contacts?.email}}</a>
+                            <p>{{contacts?.contacts}}</p>
+                        </address>
+                    </div>
+                </div>
             </div>
-            <div class="col-lg-2 col-lg-offset-7 col-md-3 col-md-offset-5 col-sm-4 col-sm-offset-3">
-              <a href="#">
-                <i class="fa fa-vk" aria-hidden="true"></i>
-              </a>
-              <a href="#">
-                <i class="fa fa-facebook" aria-hidden="true"></i>
-              </a>
-              <a href="#">
-                <i class="fa fa-twitter" aria-hidden="true"></i>
-              </a>
-              <a href="#">
-                <i class="fa fa-instagram" aria-hidden="true"></i>
-              </a>
+            <div class="back_footer2">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-4 col-sm-5">
+                            <p>© Smartstol.ru 2017. Все права защищены.</p>
+                        </div>
+                        <div class="col-lg-2 col-lg-offset-7 col-md-3 col-md-offset-5 col-sm-4 col-sm-offset-3">
+                            <!--<a href="#">-->
+                            <!--<i class="fa fa-vk" aria-hidden="true"></i>-->
+                            <!--</a>-->
+                            <!--<a href="#">-->
+                            <!--<i class="fa fa-facebook" aria-hidden="true"></i>-->
+                            <!--</a>-->
+                            <!--<a href="#">-->
+                            <!--<i class="fa fa-twitter" aria-hidden="true"></i>-->
+                            <!--</a>-->
+                            <!--<a href="#">-->
+                            <!--<i class="fa fa-instagram" aria-hidden="true"></i>-->
+                            <!--</a>-->
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
 </footer>

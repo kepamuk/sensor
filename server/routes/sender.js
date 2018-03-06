@@ -13,9 +13,20 @@ module.exports = (router) => {
                     <strong>Name:</strong>
                     <span>${req.body.name}</span>
                 </p>
+                
                 <p>
                     <strong>Phone:</strong>
                     <span>${req.body.phone}</span>
+                </p>
+                
+                <p>
+                    <strong>Email:</strong>
+                    <span>${req.body.email}</span>
+                </p>
+                
+                <p>
+                    <strong>Message:</strong>
+                    <span>${req.body.message}</span>
                 </p>
                
                 <p>

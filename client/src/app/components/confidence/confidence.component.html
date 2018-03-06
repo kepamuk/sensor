@@ -1,11 +1,11 @@
 <section class="confidence">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12">
-        <h2>Нам доверяют более 590 компаний</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <h2>Нам доверяют более 590 компаний</h2>
 
-        <app-slider [template]="'confidence'"
-                    [config]="{
+                <app-slider [template]="'confidence'"
+                            [config]="{
                                 dots: false,
                                 infinite: true,
                                 speed: 300,
@@ -38,70 +38,34 @@
                                     }
                                 ]
                             }"
-                    [slides]="[
-                {src: '/assets/img/btnPresent.png'},
-                {src: '/assets/img/btnPresent.png'},
-                {src: '/assets/img/btnPresent.png'},
-                {src: '/assets/img/btnPresent.png'},
-                {src: '/assets/img/btnPresent.png'},
-                {src: '/assets/img/btnPresent.png'},
-                {src: '/assets/img/btnPresent.png'},
-                {src: '/assets/img/btnPresent.png'},
-                {src: '/assets/img/btnPresent.png'},
-                {src: '/assets/img/btnPresent.png'},
-                {src: '/assets/img/btnPresent.png'}
-                ]"></app-slider>
-      </div>
-      <div class="clearfix"></div>
-      <div class="confidence-line"></div>
-      <div class="clearfix"></div>
-      <div class="col-md-5 col-sm-12">
-        <h3>Почему выбирают нас?</h3>
-        <p>Рекламно-производственная компания «Смарт стол» была основана в 2013 году. <b>Наша основная
-          специализация активное развитие</b> и внедрение интерактивных, проекционных, голографических
-          технологий в жизнь общества.</p>
-        <p>Их использование позволяет нашим клиентам облегчить процесс принятия управленческих решений, а также
-          дает возможность существенно повысить эффективность и эффектность рекламной компании или любого
-          проводимого мероприятия.</p>
-        <ul>
-          <li>
-            <p>Собственное производство</p>
-            <p>С 2012 года на ст. м. Балтийская в СПб.</p>
-          </li>
-          <li>
-            <p>Гарантия 2 года</p>
-            <p>+ паспорт изделия</p>
-          </li>
-          <li>
-            <p>Бесплатная доставка</p>
-            <p>по РФ</p>
-          </li>
-          <li>
-            <p>Самая низкая цена</p>
-            <p>на рынке</p>
-          </li>
-        </ul>
-      </div>
+                            [slides]="slider"></app-slider>
+            </div>
+            <div class="clearfix"></div>
+            <div class="confidence-line"></div>
+            <div class="clearfix"></div>
+            <div class="col-md-5 col-sm-12"
+                 [innerHTML]="contentGallery[0]">
+            </div>
 
-      <div class="col-md-6 col-md-offset-1 col-sm-8">
-        <h3>Наше производство</h3>
-        <ngx-gallery [options]="galleryOptions"
-                     [images]="galleryImages"></ngx-gallery>
-        <div class="clearfix"></div>
+            <div class="col-md-6 col-md-offset-1 col-sm-8">
+                <h3>Наше производство</h3>
+                <!--<ngx-gallery [options]="galleryOptions"-->
+                             <!--[images]="galleryImages0"></ngx-gallery>-->
+                <!--<div class="clearfix"></div>-->
+                <!--<ngx-gallery [options]="galleryOptions"-->
+                             <!--[images]="galleryImages1"></ngx-gallery>-->
+                <!--<div class="clearfix"></div>-->
+                <!--<ngx-gallery [options]="galleryOptions"-->
+                             <!--[images]="galleryImages2"></ngx-gallery>-->
+                <!--<div class="clearfix"></div>-->
+                <!--<ngx-gallery [options]="galleryOptions"-->
+                             <!--[images]="galleryImages3"></ngx-gallery>-->
 
-      </div>
+            </div>
 
-      <div class="col-xs-12">
-        <h3>Больше о нашей компании</h3>
-
-        <p>Рекламно-производственная компания «Смарт стол» была основана в 2013 году. <b>Наша основная
-          специализация активное развитие</b> и внедрение интерактивных, проекционных, голографических
-          технологий в жизнь общества.</p>
-
-        <p>Их использование позволяет нашим клиентам облегчить процесс принятия управленческих решений, а также
-          дает возможность существенно повысить эффективность и эффектность рекламной компании или любого
-          проводимого мероприятия.</p>
-      </div>
+            <div class="col-xs-12"
+                 [innerHTML]="contentGallery[1]">
+            </div>
+        </div>
     </div>
-  </div>
 </section>

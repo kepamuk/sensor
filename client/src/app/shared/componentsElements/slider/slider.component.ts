@@ -1,5 +1,16 @@
-import {Component, Input} from '@angular/core';
+import {AfterViewInit, Component, Input, OnInit, Pipe, PipeTransform} from '@angular/core';
 import {DomSanitizer} from '@angular/platform-browser';
+
+// https://www.youtube.com/embed/rs9w5bgtJC8
+@Pipe({name: 'safe'})
+export class SafePipe implements PipeTransform {
+    constructor(private sanitizer: DomSanitizer) {
+    }
+
+    transform(url) {
+        return this.sanitizer.bypassSecurityTrustResourceUrl(url);
+    }
+}
 
 @Component({
     selector: 'app-slider',
@@ -46,7 +57,16 @@ import {DomSanitizer} from '@angular/platform-browser';
                     <div class="col-lg-4 col-lg-offset-1 col-md-6">
                         <h3>{{s.label}}</h3>
                         <p>{{s.text}}</p>
-                        <button class="btn">Получить консультацию</button>
+                        <app-button [styles]="{
+                                  'background-color': 'transparent',
+                                  'color': '#0093d1',
+                                   'white-space': 'normal',
+                                   'line-height': '20px',
+                                   'margin-top': '20px'
+                                }"
+                                    [hover]="{'background-color': '#0093d1', 'color': '#fff'}">
+                            Получить консультацию
+                        </app-button>
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-6">
                         <img [src]="s.src1" alt="">
@@ -64,12 +84,10 @@ import {DomSanitizer} from '@angular/platform-browser';
                 <div ngxSlickItem
                      class="slick-video__slide"
                      *ngFor="let s of slides">
-                    <iframe width="100%"
+                    <iframe [src]="('https://www.youtube.com/embed/' + s.src) | safe"
+                            width="100%"
                             height="210"
-                            [src]="sanitizer.bypassSecurityTrustResourceUrl(s.src)"
                             frameborder="0"
-                            gesture="media"
-                            allow="encrypted-media"
                             allowfullscreen></iframe>
                 </div>
             </ngx-slick>
@@ -82,6 +100,18 @@ import {DomSanitizer} from '@angular/platform-browser';
                      *ngFor="let s of slides"
                      class="slick-confidence__slide">
                     <img [src]="s.src" alt="">
+                </div>
+            </ngx-slick>
+
+            <ngx-slick *ngSwitchCase="'slick-popup'"
+                       class="slick-popup"
+                       #slickModal="slick-modal"
+                       [config]="config">
+                <div ngxSlickItem
+                     *ngFor="let s of slides"
+                     class="slick-confidence__slide">
+                    <img [src]="s.src" alt="">
+                    <app-checkbox></app-checkbox>
                 </div>
             </ngx-slick>
 
@@ -160,17 +190,21 @@ import {DomSanitizer} from '@angular/platform-browser';
         .slick-confidence {
             margin-top: 10px;
         }
-
     `]
 })
-export class SliderComponent {
+export class SliderComponent implements OnInit {
 
-    @Input() slides = [];
     @Input() template: string;
+    @Input() slides = [];
     @Input() config = [];
 
-    constructor(public sanitizer: DomSanitizer) {
+    constructor() {
+
+    }
+
+    ngOnInit(): void {
 
     }
 
 }
+

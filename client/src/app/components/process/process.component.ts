@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {SliderService} from '../../services/slider.service';
+
+declare var $: any;
 
 @Component({
   selector: 'app-process',
@@ -7,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProcessComponent implements OnInit {
 
-  constructor() { }
+    slider: any = [];
+
+    constructor(private sliderService: SliderService) {
+        this.sliderService.getSliders()
+            .subscribe(data => {
+                this.slider = data[0]['proccess'];
+            });
+    }
 
   ngOnInit() {
+      $('.btn-proc').on('click', function () {
+          $('.slick-dots > li').eq($(this).data( 'attr' )).trigger( 'click' );
+      });
   }
 
 }

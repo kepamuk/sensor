@@ -1,0 +1,74 @@
+.my-model{
+    margin-top: 80px;
+}
+.my-model h2{
+    margin-bottom: 30px;
+}
+.my-model h3{
+    font-size: 22px;
+    color: black;
+    margin-bottom: 14px;
+    margin-top: 20px;
+}
+.my-model h3:first-child{
+    margin-top: 0;
+}
+.my-model p{
+    color: #333;
+    font-size: 14px;
+}
+.prices span{
+    background-color: white;
+    border: 2px solid #0093d1;
+    border-radius: 5px;
+    padding: 2px 4px;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 4px;
+}
+.prices span.active{
+    background-color: #0093d1;
+    color: #fff;
+}
+.price_f{
+    color: black;
+    font-family: 'PTSans-Bold';
+    font-size: 30px;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+.my-model .input_form{
+    width: 50%;
+    display: inline-block;
+    vertical-align: top;
+}
+.my-model .btn-blue{
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 10px;
+}
+.my-model .btn-present{
+    display: inline-block;
+    vertical-align: top;
+    margin: 0;
+}
+.present_wrap{
+    margin-top: 30px;
+}
+.present_wrap .present{
+    vertical-align: middle;
+    margin-left: 20px;
+    display: inline-block;
+    margin-top: 6px;
+}
+.present_wrap + p{
+    margin-top: 30px;
+}
+.my_img_main{
+    max-width: 100%;
+}
+.my_img_main img{
+    width: 100%;
+}

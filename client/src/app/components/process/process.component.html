@@ -5,20 +5,60 @@
                 <h2>Процесс сборки интерактивных столов</h2>
 
                 <div class="col-md-3 col-sm-6">
-                    <button class="btn btn-proc" data-attr="0"><b>1 шаг:</b> Выбор начинки</button>
+                    <app-button class="btn-proc"
+                                data-attr="0"
+                                [styles]="{
+                                  'background-color': 'transparent',
+                                  'color': '#0093d1',
+                                  'width': '100%',
+                                   'white-space': 'normal',
+                                   'line-height': '20px'
+                                }"
+                                [hover]="{'background-color': '#0093d1', 'color': '#fff'}">
+                        <b>1 шаг:</b> Выбор начинки
+                    </app-button>
                 </div>
                 <div class="col-md-3 col-sm-6">
-                    <button class="btn btn-proc" data-attr="1"><b>2 шаг:</b> Изготовление корпуса</button>
+                    <app-button class="btn-proc"
+                                data-attr="1"
+                                [styles]="{
+                                  'background-color': 'transparent',
+                                  'color': '#0093d1',
+                                  'width': '100%',
+                                   'white-space': 'normal',
+                                   'line-height': '20px'
+                                }"
+                                [hover]="{'background-color': '#0093d1', 'color': '#fff'}">
+                        <b>2 шаг:</b> Изготовление корпуса
+                    </app-button>
                 </div>
                 <div class="col-md-3 col-sm-6">
-                    <button class="btn btn-proc" data-attr="2"><b>3 шаг:</b> Сборка</button>
+                    <app-button class="btn-proc"
+                                data-attr="2"
+                                [styles]="{
+                                  'background-color': 'transparent',
+                                  'color': '#0093d1',
+                                  'width': '100%',
+                                   'white-space': 'normal',
+                                   'line-height': '20px'
+                                }"
+                                [hover]="{'background-color': '#0093d1', 'color': '#fff'}">
+                        <b>3 шаг:</b> Сборка
+                    </app-button>
                 </div>
                 <div class="col-md-3 col-sm-6">
-                    <app-btn [template]="'button'"
-                             [styles]=""
-                             [hover]="{'background-color': '#0093d1', 'color': '#fff'}">
+                    <app-button class="btn-proc"
+                                data-attr="3"
+                                [styles]="{
+                                  'background-color': 'transparent',
+                                  'color': '#0093d1',
+                                  'width': '100%',
+                                   'white-space': 'normal',
+                                   'line-height': '20px'
+                                }"
+                                [hover]="{'background-color': '#0093d1', 'color': '#fff'}">
                         <b>4 шаг:</b> Программирование и тестирование
-                    </app-btn>
+                    </app-button>
                 </div>
 
                 <div class="clearfix"></div>
@@ -32,12 +72,7 @@
                                 slidesToScroll: 1,
                                 arrows: false
                             }"
-                            [slides]="[
-                {src1: '/assets/img/proc1.jpg', src2: '/assets/img/proc2.jpg', label: '1 шаг: Выбор начинки',text: 'На данном этапе выбираются комплектующие, чтобы обеспечить необходимую для ваших задач производительность сенсорного стола. Довольно часто, используем стандартные комбинации процессора, оперативной памяти и других комплектующих, которые отлично зарекомендовали себя в популярных моделях наших столов, например стола Smart X1.'},
-                {src1: '/assets/img/proc1.jpg', src2: '/assets/img/proc2.jpg', label: '1 шаг: Выбор начинки',text: 'На данном этапе выбираются комплектующие, чтобы обеспечить необходимую для ваших задач производительность сенсорного стола. Довольно часто, используем стандартные комбинации процессора, оперативной памяти и других комплектующих, которые отлично зарекомендовали себя в популярных моделях наших столов, например стола Smart X1.'},
-                {src1: '/assets/img/proc1.jpg', src2: '/assets/img/proc2.jpg', label: '1 шаг: Выбор начинки',text: 'На данном этапе выбираются комплектующие, чтобы обеспечить необходимую для ваших задач производительность сенсорного стола. Довольно часто, используем стандартные комбинации процессора, оперативной памяти и других комплектующих, которые отлично зарекомендовали себя в популярных моделях наших столов, например стола Smart X1.'},
-                {src1: '/assets/img/proc1.jpg', src2: '/assets/img/proc2.jpg', label: '1 шаг: Выбор начинки',text: 'На данном этапе выбираются комплектующие, чтобы обеспечить необходимую для ваших задач производительность сенсорного стола. Довольно часто, используем стандартные комбинации процессора, оперативной памяти и других комплектующих, которые отлично зарекомендовали себя в популярных моделях наших столов, например стола Smart X1.'}
-                ]"></app-slider>
+                            [slides]="slider"></app-slider>
 
             </div>
         </div>

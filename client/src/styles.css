@@ -36,3 +36,34 @@ a:focus, a:hover{
     text-align: center;
     margin-top: 18px;
 }
+.slick-slide {
+    outline: none;
+}
+
+.slick-dots li {
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+}
+.slick-dots li.slick-active{
+    background-color: #0093d1;
+}
+.slick-dots li button{
+    display: none;
+}
+.slick-process__slide h3 {
+    font-size: 20px;
+    font-family: 'PTSans-Bold';
+}
+.slick-process__slide p {
+    margin-top: 20px;
+}
+.slick-prev:before, .slick-next:before{
+    color: #0093d1;
+}
+
+.slick-confidence__slide img {
+    margin: 0 auto;
+    max-height: 200px;
+}

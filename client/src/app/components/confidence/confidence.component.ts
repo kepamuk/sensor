@@ -1,5 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {NgxGalleryAnimation, NgxGalleryImage, NgxGalleryOptions} from 'ngx-gallery';
+import {SliderService} from '../../services/slider.service';
+import {ContentService} from '../../services/content.service';
 
 @Component({
     selector: 'app-confidence',
@@ -9,7 +11,37 @@ import {NgxGalleryAnimation, NgxGalleryImage, NgxGalleryOptions} from 'ngx-galle
 export class ConfidenceComponent implements OnInit {
 
     galleryOptions: NgxGalleryOptions[];
-    galleryImages: NgxGalleryImage[];
+    galleryImages0: NgxGalleryImage[] = [];
+    galleryImages1: NgxGalleryImage[] = [];
+    galleryImages2: NgxGalleryImage[] = [];
+    galleryImages3: NgxGalleryImage[] = [];
+
+    slider: any = [];
+    contentGallery = [];
+
+    constructor(private sliderService: SliderService,
+                private contentService: ContentService) {
+        this.sliderService.getSliders()
+            .subscribe((data) => {
+                this.slider = data[0]['confidence'];
+                data[0]['gallerySlider'].map((e, i) => {
+                    e['gallery' + i].map((item) => {
+                        this['galleryImages' + i].push({
+                            small: item.src,
+                            medium: item.src,
+                            big: item.src
+                        });
+                    });
+                });
+            });
+
+        this.contentService.getContent()
+            .subscribe((data) => {
+                data[0]['gallery'].map(e => {
+                    this.contentGallery.push(e.html);
+                });
+            });
+    }
 
     ngOnInit(): void {
 
@@ -18,23 +50,6 @@ export class ConfidenceComponent implements OnInit {
             {'breakpoint': 500, 'width': '100%'}
         ];
 
-        this.galleryImages = [
-            {
-                small: 'http://farm4.staticflickr.com/3721/9207329484_ba28755ec4_o.jpg',
-                medium: 'http://farm4.staticflickr.com/3721/9207329484_ba28755ec4_o.jpg',
-                big: 'http://farm4.staticflickr.com/3721/9207329484_ba28755ec4_o.jpg'
-            },
-            {
-                small: 'http://farm4.staticflickr.com/3721/9207329484_ba28755ec4_o.jpg',
-                medium: 'http://farm4.staticflickr.com/3721/9207329484_ba28755ec4_o.jpg',
-                big: 'http://farm4.staticflickr.com/3721/9207329484_ba28755ec4_o.jpg'
-            },
-            {
-                small: 'http://farm4.staticflickr.com/3721/9207329484_ba28755ec4_o.jpg',
-                medium: 'http://farm4.staticflickr.com/3721/9207329484_ba28755ec4_o.jpg',
-                big: 'http://farm4.staticflickr.com/3721/9207329484_ba28755ec4_o.jpg'
-            }
-        ];
     }
 
 

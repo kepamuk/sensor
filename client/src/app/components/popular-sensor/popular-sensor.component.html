@@ -1,84 +1,157 @@
-<section class="popular-sensor">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12">
-        <h2>Самые популярные модели сенсорных смарт столов</h2>
-      </div>
-      <div class="col-sm-4 col-xs-12">
-        <div class="sensor-block">
-          <div class="popular-img">
-            <img src="/assets/img/popular1.png" alt="">
-          </div>
-          <h4>Сенсорный стол Smart А1</h4>
-          <p>Для детского сада</p>
-          <small>Intel i3, 8GB RAM, SSD 120</small>
-          <a href="#" class="characteristic">Все характеристики смарт стола</a>
-          <div class="sensor-price">
-            <div class="sensor-price__left">
-              <p>32" от <span><span>131 600</span> ₽</span></p>
-              <p>32" от <span><span>131 600</span> ₽</span></p>
+<section class="popular-sensor" id="catalog">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <h2>Самые популярные модели сенсорных смарт столов</h2>
             </div>
-            <a href="#" class="btn-blue">Выбрать и заказать</a>
-          </div>
-          <div class="clearfix"></div>
-          <a href="#" class="present">+ подарок на сумму 19 800 Р</a>
-          <a href="#" class="btn-present">
-            <img src="/assets/img/btnPresent.png" alt="">
-            <span>Смотреть подарки</span>
-          </a>
-        </div>
-      </div>
-      <div class="col-sm-4 col-xs-12">
-        <div class="sensor-block">
-          <div class="popular-img">
-            <img src="/assets/img/popular2.png" alt="">
-          </div>
-          <h4>Сенсорный стол Smart А1</h4>
-          <p>Для детского сада</p>
-          <small>Intel i3, 8GB RAM, SSD 120</small>
-          <a href="#" class="characteristic">Все характеристики смарт стола</a>
-          <div class="sensor-price">
-            <div class="sensor-price__left">
-              <p>32" от <span><span>131 600</span> ₽</span></p>
-              <p>32" от <span><span>131 600</span> ₽</span></p>
-            </div>
-            <a href="#" class="btn-blue">Выбрать и заказать</a>
-          </div>
-          <div class="clearfix"></div>
-          <a href="#" class="present">+ подарок на сумму 19 800 Р</a>
-          <a href="#" class="btn-present">
-            <img src="/assets/img/btnPresent.png" alt="">
-            <span>Смотреть подарки</span>
-          </a>
-        </div>
-      </div>
 
-      <div class="col-sm-4 col-xs-12">
-        <div class="sensor-block">
-          <div class="popular-img">
-            <img src="/assets/img/popular3.png" alt="">
-          </div>
-          <h4>Сенсорный стол Smart А1</h4>
-          <p>Для детского сада</p>
-          <small>Intel i3, 8GB RAM, SSD 120</small>
-          <a href="#" class="characteristic">Все характеристики смарт стола</a>
-          <div class="sensor-price">
-            <div class="sensor-price__left">
-              <p>32" от <span><span>131 600</span> ₽</span></p>
-              <p>32" от <span><span>131 600</span> ₽</span></p>
-            </div>
-            <app-btn [styles]="{'background-color': '#0093d1', 'color': '#fff'}"
-                     [hover]="{'background-color': 'transparent', 'color': '#0093d1'}">Выбрать и заказать</app-btn>
-          </div>
-          <div class="clearfix"></div>
-          <a href="#" class="present">+ подарок на сумму 19 800 Р</a>
-          <a href="#" class="btn-present">
-            <img src="/assets/img/btnPresent.png" alt="">
-            <span>Смотреть подарки</span>
-          </a>
-        </div>
-      </div>
+            <div *ngFor="let g of goods; let i = 'index'"
+                 class="col-sm-4 col-xs-12">
 
+                <div class="sensor-block">
+                    <div class="popular-img">
+                        <img [src]="g.img" alt="">
+                    </div>
+
+                    <h4>{{g.name}}</h4>
+                    <p>{{g.for}}</p>
+
+                    <div class="char_block"
+                         [@focusPanel]="states[i]">
+                        <small *ngFor="let c of g.charact">{{c.name}}</small>
+                    </div>
+
+                    <div class="characteristic"
+                         (click)="toggleChar(i)">Все характеристики смарт стола
+                    </div>
+                    <div class="sensor-price">
+                        <div class="sensor-price__left">
+                            <p *ngFor="let s of g.sizes">
+                                {{s.size}}" от <span><span>{{s.price}}</span> ₽</span>
+                            </p>
+                        </div>
+                        <app-button data-toggle="modal"
+                                    [attr.data-target]="'#good' + i"
+                                    [styles]="{'background-color': '#0093d1', 'color': '#fff'}"
+                                    [hover]="{'background-color': 'transparent', 'color': '#0093d1'}">
+                            Отправить заявку
+                        </app-button>
+
+                        <app-popup [popup]="'good' + i">
+                            <app-popup-form [goods]="g"
+                                            [popup]="'good' + i"></app-popup-form>
+                        </app-popup>
+                    </div>
+                    <div class="clearfix"></div>
+                    <span class="present">+ подарок на сумму {{g.presentSum}} Р</span>
+                    <app-button
+                            data-toggle="modal"
+                            [attr.data-target]="'#present' + i"
+                            [styles]="{
+                            'width': '220px',
+                             'height': '40px',
+                             'background-color': '#dc373d',
+                             'border-radius': '5px',
+                             'margin': '20px auto 0',
+                             'display': 'block',
+                             'padding': '0',
+                             'border':'none'
+                             }">
+                        <img [ngStyle]="{
+                        'margin-top': '-14px'
+                         } " src="/assets/img/btnPresent.png" alt="">
+                        <span [ngStyle]="{
+                        'vertical-align': 'top',
+                         'color': '#fff',
+                         'display': 'inline-block',
+                         'text-decoration': 'underline',
+                         'line-height': '40px',
+                         'font-size': '14px'
+                         }">Смотреть подарки</span>
+                    </app-button>
+
+                    <app-popup [popup]="'present' + i">
+
+                        <img *ngIf="!hide"
+                             [ngStyle]="{
+                                'margin': '20px auto',
+                                'display': 'block'
+                             }"
+                             src="/assets/img/loading.gif" alt="">
+
+
+
+
+                    </app-popup>
+                </div>
+            </div>
+<div class="clearfix"></div>
+            <div class="popup_2">
+                <h2>ВАШ ПОДАРОК ПРИ ЗАКАЗЕ СЕГОДНЯ:</h2>
+                <p>5 любых школьных курсов и обучающих приложений от Экзамен Медиа.</p>
+
+                <app-slider id="slider"
+                            [template]="'slick-popup'"
+                            [config]="{
+                                dots: false,
+                                infinite: false,
+                                speed: 300,
+                                slidesToShow: 3,
+                                slidesToScroll: 3,
+                                arrows: true,
+                                responsive: [
+                                    {
+                                        breakpoint: 1200,
+                                        settings: {
+                                            slidesToShow: 3,
+                                            slidesToScroll: 3,
+                                            infinite: false,
+                                            dots: false
+                                        }
+                                    },
+                                    {
+                                        breakpoint: 767,
+                                        settings: {
+                                            slidesToShow: 2,
+                                            slidesToScroll: 2
+                                        }
+                                    },
+                                    {
+                                        breakpoint: 480,
+                                        settings: {
+                                            slidesToShow: 1,
+                                            slidesToScroll: 1
+                                        }
+                                    }
+                                ]
+                            }"
+                            [slides]="slides"></app-slider>
+
+
+                <h3>Выбрано: 0</h3>
+                <div class="btn_wrap">
+                    <app-button [styles]="{'background-color': '#0093d1', 'color': '#fff'}"
+                                [hover]="{'background-color': 'transparent', 'color': '#0093d1'}">
+                        Запомнить подарки и перейти к выбору стола
+                    </app-button>
+                </div>
+            </div>
+
+
+
+            <div class="col-lg-9 col-lg-offset-3 col-sm-7 col-sm-offset-5 my-model-calc">
+                <h3>Вы также можете собрать собственную модель по Вашим требованиям.</h3>
+                <p>Например Вы можете выбрать диагональ экрана, поставить сенсорную пленку, моторизированный кронштейн
+                    (вверх вниз), регулировку наклона от 0 до 90 и много другое! Соберите свой вариант смарт стола прямо
+                    сейчас!</p>
+                <app-button [styles]="{'background-color': 'transparent', 'color': '#0093d1'}"
+                            [hover]="{'background-color': '#0093d1', 'color': '#fff'}">
+                    Собрать свой вариант стола
+                </app-button>
+            </div>
+
+        </div>
     </div>
-  </div>
 </section>
+
+<app-my-model></app-my-model>

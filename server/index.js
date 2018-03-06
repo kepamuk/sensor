@@ -9,6 +9,7 @@ const contacts = require('./routes/contacts')(router);
 const goods = require('./routes/goods')(router);
 const sender = require('./routes/sender')(router);
 const content = require('./routes/content')(router);
+const slider = require('./routes/slider')(router);
 
 const port = process.env.PORT || 8080;
 
@@ -30,6 +31,7 @@ app.use('/api/contacts', contacts);
 app.use('/api/sender', sender);
 app.use('/api/goods', goods);
 app.use('/api/content', content);
+app.use('/api/slider', slider);
 
 // app.get('*',(req,res) => {
 //     res.sendFile(path.join(__dirname + '../../public_html/index.html'))

@@ -16,7 +16,7 @@ import {QuastionsComponent} from './components/quastions/quastions.component';
 import {PopularSensorComponent} from './components/popular-sensor/popular-sensor.component';
 import {VariantComponent} from './components/variant/variant.component';
 import {CategorySensorComponent} from './components/category-sensor/category-sensor.component';
-import {SliderComponent} from './shared/componentsElements/slider/slider.component';
+import {SafePipe, SliderComponent} from './shared/componentsElements/slider/slider.component';
 import {EffectionComponent} from './components/effection/effection.component';
 import {ProcessComponent} from './components/process/process.component';
 import {VideoComponent} from './components/video/video.component';
@@ -36,7 +36,15 @@ import {FormsModule} from '@angular/forms';
 import {TextMaskModule} from 'angular2-text-mask';
 import {SenderService} from './services/sender.service';
 import {ContentService} from './services/content.service';
-import { QuestionFormComponent } from './shared/componentsElements/question-form/question-form.component';
+import {QuestionFormComponent} from './shared/componentsElements/question-form/question-form.component';
+import {PopupComponent} from './shared/componentsElements/popup/popup.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {PopupFormComponent} from './shared/componentsElements/popup/popup-form.component';
+import {HelloComponent, TestComponent} from './components/test/test.component';
+import {SliderService} from './services/slider.service';
+import {AgmCoreModule} from '@agm/core';
+import { MyModelComponent } from './components/my-model/my-model.component';
+import { CheckboxComponent } from './shared/componentsElements/checkbox/checkbox.component';
 
 
 @NgModule({
@@ -61,24 +69,39 @@ import { QuestionFormComponent } from './shared/componentsElements/question-form
         FaqComponent,
         SeoComponent,
         FooterComponent,
-        QuestionFormComponent
+        QuestionFormComponent,
+        PopupComponent,
+        PopupFormComponent,
+        TestComponent,
+        HelloComponent,
+        SafePipe,
+        MyModelComponent,
+        CheckboxComponent
+    ],
+    entryComponents: [
+        SliderComponent
     ],
     imports: [
         BrowserModule,
         Angular2FontawesomeModule,
         NgxCarouselModule,
-        SlickModule.forRoot(),
         NgxGalleryModule,
         HttpClientModule,
         Ng2PageScrollModule,
         FormsModule,
-        TextMaskModule
+        TextMaskModule,
+        BrowserAnimationsModule,
+        SlickModule.forRoot(),
+        AgmCoreModule.forRoot({
+            apiKey: 'AIzaSyCXpNCVM87m5OzYx5XBciW_n2elGQkhZZI'
+        })
     ],
     providers: [
         ContactsService,
         GoodsService,
         SenderService,
-        ContentService
+        ContentService,
+        SliderService
     ],
     bootstrap: [
         AppComponent
