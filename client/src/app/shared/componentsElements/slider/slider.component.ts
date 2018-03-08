@@ -1,5 +1,7 @@
-import {AfterViewInit, Component, Input, OnInit, Pipe, PipeTransform} from '@angular/core';
+import {AfterViewInit, Component, EventEmitter, Input, OnInit, Output, Pipe, PipeTransform} from '@angular/core';
 import {DomSanitizer} from '@angular/platform-browser';
+
+declare var $: any;
 
 // https://www.youtube.com/embed/rs9w5bgtJC8
 @Pipe({name: 'safe'})
@@ -103,15 +105,29 @@ export class SafePipe implements PipeTransform {
                 </div>
             </ngx-slick>
 
-            <ngx-slick *ngSwitchCase="'slick-popup'"
-                       class="slick-popup"
+            <ngx-slick class="slick-popup"
+                       *ngSwitchCase="'slick-popup1'"
                        #slickModal="slick-modal"
                        [config]="config">
                 <div ngxSlickItem
                      *ngFor="let s of slides"
                      class="slick-confidence__slide">
                     <img [src]="s.src" alt="">
-                    <app-checkbox></app-checkbox>
+                    <app-checkbox [src]="s.src"
+                                  (checkedB)="this.checkedB.emit($event)"></app-checkbox>
+                </div>
+            </ngx-slick>
+
+            <ngx-slick class="slick-popup"
+                       *ngSwitchCase="'slick-popup2'"
+                       #slickModal="slick-modal"
+                       [config]="config">
+                <div ngxSlickItem
+                     *ngFor="let s of slides"
+                     class="slick-confidence__slide">
+                    <img [src]="s.src" alt="">
+                    <app-checkbox [src]="s.src"
+                                  (checkedB)="this.checkedB.emit($event)"></app-checkbox>
                 </div>
             </ngx-slick>
 
@@ -197,6 +213,7 @@ export class SliderComponent implements OnInit {
     @Input() template: string;
     @Input() slides = [];
     @Input() config = [];
+    @Output() checkedB = new EventEmitter<any>();
 
     constructor() {
 
@@ -207,4 +224,3 @@ export class SliderComponent implements OnInit {
     }
 
 }
-

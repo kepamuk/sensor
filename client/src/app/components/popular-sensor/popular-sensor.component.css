@@ -120,6 +120,7 @@
     max-width: 720px;
     background-color: #fff;
     text-align: center;
+    margin: 0 30px;
 }
 .popup_2 h2{
     font-family: 'PTSans-Bold';
@@ -138,4 +139,63 @@
     line-height: 30px;
 }
 
+
+.popup_present{
+    padding: 10px;
+}
+.popup_1{
+    max-width: 700px;
+    border-radius: 5px;
+    font-size: 0;
+    background-color: #fff;
+}
+.popup_1 h2{
+    font-family: 'PTSans-Bold';
+    font-size: 30px;
+    line-height: 30px;
+    text-transform: uppercase;
+}
+.popup_1 .number {
+    font-size: 36px;
+    font-family: 'PTSans-Bold';
+    font-style: italic;
+    width: 50px;
+    height: 50px;
+    background-color: #0093d1;
+    border: 1px solid #0093d1;
+    border-radius: 50%;
+    text-align: center;
+    color: white;
+    display: inline-block;
+    vertical-align: top;
+}
+.popup_part{
+    width: 50%;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 20px;
+}
+.popup_part > div:last-child{
+    width: calc(100% - 70px);
+    float: right;
+}
+.popup_part div:last-child p{
+    font-size: 20px;
+    font-family: 'PTSans-Bold';
+}
+.popup_part div:last-child span{
+    color: #666666;
+    font-size: 14px;
+    margin-top: 20px;
+    display: inline-block;
+}
+.wrap_num{
+    display: inline-block;
+    vertical-align: top;
+    width: 50px;
+}
+.num_img{
+    background-image: url('/assets/img/popup1.jpg');
+    margin-top: 20px;
+}
 

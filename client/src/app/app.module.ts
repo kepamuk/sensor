@@ -45,6 +45,7 @@ import {SliderService} from './services/slider.service';
 import {AgmCoreModule} from '@agm/core';
 import { MyModelComponent } from './components/my-model/my-model.component';
 import { CheckboxComponent } from './shared/componentsElements/checkbox/checkbox.component';
+import { PopupPresentComponent } from './shared/componentsElements/popup/popup-present.component';
 
 
 @NgModule({
@@ -76,7 +77,8 @@ import { CheckboxComponent } from './shared/componentsElements/checkbox/checkbox
         HelloComponent,
         SafePipe,
         MyModelComponent,
-        CheckboxComponent
+        CheckboxComponent,
+        PopupPresentComponent
     ],
     entryComponents: [
         SliderComponent

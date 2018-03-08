@@ -1,4 +1,4 @@
-import {AfterContentInit, AfterViewInit, Component, OnInit, ViewChild, ViewContainerRef} from '@angular/core';
+import {AfterContentInit, Component, ViewChild, ViewContainerRef} from '@angular/core';
 import {
     trigger,
     state,
@@ -10,8 +10,6 @@ import {
 declare var $: any;
 
 import {GoodsService} from '../../services/goods.service';
-import {SliderComponent} from '../../shared/componentsElements/slider/slider.component';
-import {SliderService} from '../../services/slider.service';
 
 @Component({
     selector: 'app-popular-sensor',
@@ -30,52 +28,61 @@ import {SliderService} from '../../services/slider.service';
     ]
 })
 
-export class PopularSensorComponent implements OnInit, AfterViewInit, AfterContentInit {
+export class PopularSensorComponent implements AfterContentInit {
 
     goods;
     states;
-    slides = [];
     hide = false;
+    presentSend;
+
+    presents = [];
 
     @ViewChild('container', {read: ViewContainerRef}) viewContainerRef;
 
-    constructor(private goodsService: GoodsService,
-                private sliderService: SliderService) {
+    constructor(private goodsService: GoodsService) {
         goodsService.getGoods()
             .subscribe(goods => {
                 this.goods = goods;
+                console.log(this.goods);
                 this.states = this.goods.map(() => 'in');
             });
 
-        sliderService.getSliders()
-            .subscribe(slides => {
-                this.slides = slides[0]['school'];
-            });
     }
 
     toggleChar(i: number) {
         this.states[i] = this.states[i] === 'in' ? 'out' : '';
     }
 
-    ngOnInit() {
-
-    }
-
-    ngAfterViewInit() {
-
-    }
-
     ngAfterContentInit() {
         const self = this;
-        $('#catalog').on('shown.bs.modal', function (e) {
-            // self.createComp();
+        $('#catalog').on('shown.bs.modal', function () {
             console.log('shown');
-            $('#tttt').slick('refresh');
             self.hide = true;
         });
-        $('#catalog').on('hidden.bs.modal', function() {
+        $('#catalog').on('hidden.bs.modal', function () {
             console.log('hidden');
+            self.hide = false;
+            self.presents = [];
         });
+    }
+
+    onCheck(src) {
+        if (this.presents.indexOf(src) === -1) {
+            this.presents.push(src);
+        } else {
+            this.presents.splice(this.presents.indexOf(src), 1);
+        }
+    }
+
+    sendPresent(i) {
+
+        this.presentSend = this.presents;
+
+        $('#present' + i).modal('hide');
+        window.setTimeout(() => {
+            $('#good' + i).modal('show');
+        }, 400);
+
     }
 
 }

@@ -5,7 +5,7 @@ module.exports = (router) => {
 
     router.post('/send', (req, res) => {
 
-        if(!req.body.options) req.body.options = '';
+        if (!req.body.options) req.body.options = '';
 
         const output = `
             <div>
@@ -34,6 +34,10 @@ module.exports = (router) => {
                     <span>Name: ${req.body.options.goodName}</span>
                     <span>Size: ${req.body.options.size}</span>
                     <span>Price: ${req.body.options.price}</span>
+                </p>
+                <p>
+                    <strong>Presents:</strong>
+                    <span>${req.body.presents}</span>
                 </p>
             </div>
         `;

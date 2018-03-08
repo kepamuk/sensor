@@ -1,4 +1,5 @@
-<section class="popular-sensor" id="catalog">
+<section class="popular-sensor"
+         id="catalog">
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
@@ -39,7 +40,8 @@
 
                         <app-popup [popup]="'good' + i">
                             <app-popup-form [goods]="g"
-                                            [popup]="'good' + i"></app-popup-form>
+                                            [popup]="'good' + i"
+                                            [presents]="presentSend"></app-popup-form>
                         </app-popup>
                     </div>
                     <div class="clearfix"></div>
@@ -72,27 +74,52 @@
 
                     <app-popup [popup]="'present' + i">
 
-                        <img *ngIf="!hide"
-                             [ngStyle]="{
+                        <div *ngIf="i === 0"
+                             class="popup_1 popup_present">
+                            <h2>ВАШИ 2 ПОДАРКА ПРИ ЗАКАЗЕ СЕГОДНЯ:</h2>
+                            <div class="popup_part">
+                                <div class="number">1</div>
+                                <div>
+                                    <p>20 000 рублей на разработку контента</p>
+                                    <span>20 часов работы программиста или 15 часов разработчика 3D презентаций</span>
+                                </div>
+                            </div>
+                            <div class="popup_part">
+                                <div class="wrap_num">
+                                    <div class="number">2</div>
+                                    <div class="number num_img"></div>
+                                </div>
+                                <div>
+                                    <p>Уникальный опыт для руководителя организации:</p>
+                                    <span>1,5-часовое путешествие в очках Microsoft Hololens «Дополненная реальность – мир голограмм в привычной жизни» стоимостью 18 000 рублей.</span>
+                                </div>
+                            </div>
+                            <div class="btn_wrap">
+                                <app-button [styles]="{'background-color': '#0093d1', 'color': '#fff'}"
+                                            [hover]="{'background-color': 'transparent', 'color': '#0093d1'}"
+                                            (click)="sendPresent(i)">
+                                    Перейти к заказу и забрать подарки
+                                </app-button>
+                            </div>
+                        </div>
+
+                        <div *ngIf="i === 1 || i === 2"
+                             class="popup_2 popup_present">
+                            <h2>ВАШ ПОДАРОК ПРИ ЗАКАЗЕ СЕГОДНЯ:</h2>
+                            <p *ngIf="i === 1">5 любых школьных курсов и обучающих приложений от Экзамен Медиа.</p>
+                            <p *ngIf="i === 2">3 любых пакета развивающих программ и игр от Экзамен Медиа.</p>
+
+                            <img *ngIf="!hide"
+                                 [ngStyle]="{
                                 'margin': '20px auto',
                                 'display': 'block'
                              }"
-                             src="/assets/img/loading.gif" alt="">
+                                 src="/assets/img/loading.gif" alt="">
 
-
-
-
-                    </app-popup>
-                </div>
-            </div>
-<div class="clearfix"></div>
-            <div class="popup_2">
-                <h2>ВАШ ПОДАРОК ПРИ ЗАКАЗЕ СЕГОДНЯ:</h2>
-                <p>5 любых школьных курсов и обучающих приложений от Экзамен Медиа.</p>
-
-                <app-slider id="slider"
-                            [template]="'slick-popup'"
-                            [config]="{
+                            <app-slider (checkedB)="onCheck($event)"
+                                        *ngIf="hide"
+                                        [template]="'slick-popup' + i"
+                                        [config]="{
                                 dots: false,
                                 infinite: false,
                                 speed: 300,
@@ -125,18 +152,24 @@
                                     }
                                 ]
                             }"
-                            [slides]="slides"></app-slider>
+                                        [slides]="g.presents"></app-slider>
 
+                            <h3>Выбрано: {{presents.length}}</h3>
 
-                <h3>Выбрано: 0</h3>
-                <div class="btn_wrap">
-                    <app-button [styles]="{'background-color': '#0093d1', 'color': '#fff'}"
-                                [hover]="{'background-color': 'transparent', 'color': '#0093d1'}">
-                        Запомнить подарки и перейти к выбору стола
-                    </app-button>
+                            <div class="btn_wrap">
+                                <app-button [styles]="{'background-color': '#0093d1', 'color': '#fff'}"
+                                            [hover]="{'background-color': 'transparent', 'color': '#0093d1'}"
+                                            (click)="sendPresent(i)">
+                                    Запомнить подарки и перейти к выбору стола
+                                </app-button>
+                            </div>
+                        </div>
+
+                    </app-popup>
                 </div>
             </div>
 
+            <div class="clearfix"></div>
 
 
             <div class="col-lg-9 col-lg-offset-3 col-sm-7 col-sm-offset-5 my-model-calc">

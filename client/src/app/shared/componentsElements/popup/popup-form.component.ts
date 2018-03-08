@@ -144,6 +144,7 @@ export class PopupFormComponent implements OnInit {
 
     @Input() goods: any = [];
     @Input() popup: string;
+    @Input() presents;
     message;
 
     public mask = ['8', '(', /[1-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/];
@@ -161,7 +162,8 @@ export class PopupFormComponent implements OnInit {
             values['options'] = {};
         }
         values['options'].goodName = this.goods.name;
-
+        values.presents = this.presents;
+        console.log(this.presents);
         this.senderService.send(values)
             .subscribe(res => {
                 this.message = res;
@@ -171,6 +173,7 @@ export class PopupFormComponent implements OnInit {
         window.setTimeout(() => {
             $(`#${this.popup}`).modal('hide');
             this.message = null;
+            this.presents = [];
         }, 3000);
     }
 
