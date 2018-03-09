@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {NgForm} from '@angular/forms';
 
 declare var $: any;
-import {NgForm} from '@angular/forms';
 import {SenderService} from '../../../services/sender.service';
 
 @Component({
@@ -21,7 +21,6 @@ import {SenderService} from '../../../services/sender.service';
                     <div class="sensor-price__left">
                         <label *ngFor="let s of goods['sizes']">
                             <input name="options"
-                                   ng-control="options"
                                    type="radio"
                                    [value]="s"
                                    [(ngModel)]="options">
@@ -163,7 +162,7 @@ export class PopupFormComponent implements OnInit {
         }
         values['options'].goodName = this.goods.name;
         values.presents = this.presents;
-        console.log(this.presents);
+
         this.senderService.send(values)
             .subscribe(res => {
                 this.message = res;

@@ -46,7 +46,7 @@ import {AgmCoreModule} from '@agm/core';
 import { MyModelComponent } from './components/my-model/my-model.component';
 import { CheckboxComponent } from './shared/componentsElements/checkbox/checkbox.component';
 import { PopupPresentComponent } from './shared/componentsElements/popup/popup-present.component';
-
+import {Location, PathLocationStrategy} from '@angular/common';
 
 @NgModule({
     declarations: [
@@ -103,7 +103,9 @@ import { PopupPresentComponent } from './shared/componentsElements/popup/popup-p
         GoodsService,
         SenderService,
         ContentService,
-        SliderService
+        SliderService,
+        Location,
+        PathLocationStrategy
     ],
     bootstrap: [
         AppComponent

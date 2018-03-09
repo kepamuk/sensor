@@ -206,6 +206,10 @@ export class SafePipe implements PipeTransform {
         .slick-confidence {
             margin-top: 10px;
         }
+
+        .slick-confidence__slide img{
+            width: 100%;
+        }
     `]
 })
 export class SliderComponent implements OnInit {

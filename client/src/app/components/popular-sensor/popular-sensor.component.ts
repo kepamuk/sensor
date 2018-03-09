@@ -36,14 +36,14 @@ export class PopularSensorComponent implements AfterContentInit {
     presentSend;
 
     presents = [];
+    calcAnim;
 
-    @ViewChild('container', {read: ViewContainerRef}) viewContainerRef;
+    // @ViewChild('container', {read: ViewContainerRef}) viewContainerRef;
 
     constructor(private goodsService: GoodsService) {
         goodsService.getGoods()
             .subscribe(goods => {
                 this.goods = goods;
-                console.log(this.goods);
                 this.states = this.goods.map(() => 'in');
             });
 
@@ -56,11 +56,9 @@ export class PopularSensorComponent implements AfterContentInit {
     ngAfterContentInit() {
         const self = this;
         $('#catalog').on('shown.bs.modal', function () {
-            console.log('shown');
             self.hide = true;
         });
         $('#catalog').on('hidden.bs.modal', function () {
-            console.log('hidden');
             self.hide = false;
             self.presents = [];
         });
@@ -85,4 +83,8 @@ export class PopularSensorComponent implements AfterContentInit {
 
     }
 
+    onCalc() {
+        console.log(222);
+        this.calcAnim = 'out';
+    }
 }
