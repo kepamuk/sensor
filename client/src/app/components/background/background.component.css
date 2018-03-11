@@ -1,5 +1,4 @@
 .background {
-    background-image: url('/assets/img/background.png'), linear-gradient(#fff, #ebf5ff);
     background-repeat: no-repeat;
     background-position: center 0;
     background-size: cover;
@@ -21,6 +20,7 @@ ul.menu li:last-child {
     margin-right: 0;
 }
 
+ul.menu li span,
 ul.menu li a {
     font-size: 16px;
     border-radius: 15px;
@@ -32,10 +32,16 @@ ul.menu li a {
     -ms-transition: .25s background-color;
     -o-transition: .25s background-color;
     transition: .25s background-color;
+    cursor: pointer;
 }
 
+ul.menu li span:hover,
 ul.menu li a:hover {
     background-color: rgba(255, 255, 255, .1);
+}
+
+ul.menu li a.active {
+    background-color: rgba(255, 255, 255, .3);
 }
 
 .background .line {
@@ -54,7 +60,7 @@ ul.menu li a:hover {
 
 .main-text h3 {
     font-size: 36px;
-    line-height: 36px;
+    line-height: 40px;
 }
 
 .main-text p {
@@ -64,8 +70,10 @@ ul.menu li a:hover {
     margin-bottom: 4px;
 }
 
-.main-text span {
+.main-text > span {
     font-size: 18px;
+    margin-top: 20px;
+    display: block;
 }
 
 .main-text a {
@@ -83,19 +91,75 @@ ul.menu li a:hover {
     border-bottom: 1px dotted transparent;
 }
 
-.video_wrap{
+.video_wrap {
     padding: 0 20px !important;
 }
-.video-dialog{
+
+.video-dialog {
     border-radius: 10px;
     overflow: hidden;
     width: 100%;
     max-width: 800px;
 }
+
 .video-dialog .modal-content {
     height: 600px;
     width: 100%;
 }
-.video_popup_wrap{
+
+.video_popup_wrap {
     height: 400px;
+}
+
+
+@media screen and (max-width: 1199px) {
+    ul.menu{
+        text-align: center;
+    }
+    ul.menu li {
+        margin: 0;
+    }
+
+    ul.menu li a,
+    ul.menu li span {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .background{
+        height: 700px;
+    }
+    ul.menu li a {
+        font-size: 16px;
+    }
+
+    ul.menu {
+        text-align: center;
+    }
+    .main-text{
+        margin: 140px auto 0;
+    }
+}
+@media screen and (max-width: 767px) {
+    h2,
+    .main-text p{
+        font-size: 20px;
+        line-height: 20px;
+    }
+    h3,
+    .main-text h3{
+        font-size: 16px;
+        line-height: 16px;
+    }
+    .main-text{
+        margin: 40px auto 0;
+    }
+    .background{
+        height: auto;
+    }
+    .main-text a{
+        margin-bottom: 20px;
+        display: inline-block;
+    }
 }

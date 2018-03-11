@@ -65,6 +65,14 @@ import {SenderService} from '../../../services/sender.service';
         .questions-input__input:-moz-placeholder { /* Firefox 18- */
             color: #000;
         }
+        @media screen and (max-width: 767px) {
+            .questions-input__input{
+                width: calc(100% - 140px);
+            }
+            :host /deep/ button {
+                width: 130px !important;
+            }
+        }
     `]
 })
 export class QuestionFormComponent implements OnInit {

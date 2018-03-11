@@ -49,3 +49,27 @@
     margin-top: 14px;
     display: block;
 }
+
+
+@media screen and (max-width: 1199px) {
+
+    .variant p{
+        margin-bottom: 6px;
+    }
+    .variant-question{
+        padding: 12px 0;
+    }
+    .variant-question h3{
+        line-height: 24px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+
+    .variant-question img{
+        left: 4px;
+    }
+    .text_under{
+        margin-top: 2px;
+    }
+}

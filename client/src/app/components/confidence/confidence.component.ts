@@ -46,8 +46,15 @@ export class ConfidenceComponent implements OnInit {
     ngOnInit(): void {
 
         this.galleryOptions = [
-            {'image': false, 'height': '100px'},
-            {'breakpoint': 500, 'width': '100%'}
+            {
+                width: '100%',
+                height: '400px',
+                thumbnailsColumns: 5
+            },
+            {
+                breakpoint: 767,
+                thumbnailsColumns: 3
+            }
         ];
 
     }

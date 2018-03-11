@@ -56,6 +56,8 @@
 
 :host ::ng-deep .confidence h3 {
     font-size: 20px;
+    margin-bottom: 10px;
+    margin-top: 20px;
 }
 :host ::ng-deep .confidence p {
     margin-top: 18px;
@@ -94,4 +96,36 @@
 :host ::ng-deep .confidence ul li p {
     margin: 0;
     font-family: 'PTSans-Bold';
+}
+
+@media screen and (max-width: 991px) {
+    .confidence ul{
+        margin-top: 10px;
+        margin-left: 0;
+        font-size: 0;
+    }
+    .confidence ul li{
+        display: inline-block;
+        vertical-align: top;
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .confidence{
+        margin-top: 10px;
+    }
+    .confidence h2{
+        margin-top: 50px;
+    }
+    :host /deep/ .confidence ul {
+        margin-top: 10px;
+        margin-left: 0 !important;
+        font-size: 0;
+    }
+    :host /deep/ .confidence ul li {
+        display: inline-block;
+        vertical-align: top;
+        width: 50%;
+    }
 }

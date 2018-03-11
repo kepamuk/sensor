@@ -1,4 +1,4 @@
-import {Component, Input, ViewEncapsulation} from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
     selector: 'app-button',
@@ -32,7 +32,6 @@ import {Component, Input, ViewEncapsulation} from '@angular/core';
             .btn:focus,
             .btn:active {
                 outline: none;
-
             }
             :host(:hover) /deep/ span{
                 text-decoration: none !important;

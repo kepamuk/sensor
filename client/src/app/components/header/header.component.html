@@ -7,8 +7,8 @@
                     <i class="fa fa-bars menu_bar fa-2x" aria-hidden="true"></i>
                     <div class="clearf"></div>
                     <ul class="menu_m menu">
-                        <li><a href="#">Главная</a></li>
-                        <li><a href="#">Детский стол</a></li>
+                        <li><a routerLink="['/']">Главная</a></li>
+                        <li><a routerLink="['/dlja-detej']">Детский стол</a></li>
                         <li><a href="#">Стол для логопеда</a></li>
                         <li><a href="#">Для выставок и презентаций</a></li>
                         <li><a href="#">Для коммерческих целей</a></li>
@@ -22,6 +22,7 @@
                 <a href="tel:{{contacts?.phoneNumber}}" class="number">{{contacts?.phoneNumber}}</a>
                 <p>Отвечаем ежедневно с {{contacts?.workTimeFrom}} до {{contacts?.workTimeTo}}</p>
             </div>
+            <div class="clearfix"></div>
             <div class="col-md-2 col-sm-4 hidden-xs">
                 <div class="contact">
                     <i class="fa fa-envelope-o fa-lg" aria-hidden="true"></i>

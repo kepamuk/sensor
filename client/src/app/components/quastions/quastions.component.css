@@ -25,3 +25,19 @@
     margin-top: 14px;
     display: block;
 }
+
+@media screen and (max-width: 1199px) {
+    .questions {
+        margin: -90px auto 0 ;
+    }
+}
+@media screen and (max-width: 767px) {
+    .questions h3{
+        font-size: 16px;
+        line-height: 16px;
+    }
+    .questions{
+        margin: -90px 6px 0;
+        padding: 50px 6px 10px;
+    }
+}

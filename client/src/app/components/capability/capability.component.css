@@ -66,3 +66,35 @@
     margin-top: 46px;
     max-width: 100%;
 }
+
+@media screen and (max-width: 1199px) {
+    .capability {
+        height: auto;
+    }
+
+    .capability {
+        -webkit-background-size: cover;
+        background-size: cover;
+        background-position: 0 -26px;
+    }
+    .capability ul li {
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+
+    .capability {
+        background-position: 0 -50px;
+    }
+    .capability ul {
+        margin-bottom: 50px;
+    }
+    .capability ul li{
+        margin-bottom: 20px;
+    }
+    .capability_img{
+        margin: 0;
+        display: none;
+    }
+}

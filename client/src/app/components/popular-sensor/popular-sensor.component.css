@@ -185,3 +185,15 @@
     margin-top: 20px;
 }
 
+
+@media screen and (max-width: 991px) {
+    .sensor-block h4{
+        font-size: 18px;
+    }
+    .sensor-block p{
+        font-size: 14px;
+    }
+    .slick-process{
+        margin: 0;
+    }
+}

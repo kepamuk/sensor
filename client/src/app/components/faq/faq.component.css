@@ -105,3 +105,9 @@ tbody.collapse.in {
     -o-transition-timing-function: ease;
     transition-timing-function: ease
 }
+
+@media screen and (max-width: 767px) {
+    .panel-group{
+        margin-top: 10px;
+    }
+}

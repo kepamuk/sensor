@@ -116,3 +116,12 @@ agm-map {
     height: 100%;
 }
 
+@media screen and (max-width: 767px) {
+    address{
+        width: auto;
+    }
+    footer{
+        border-radius: 100% 100% 0px 0px / 2% 1% 0px 0px;
+        text-align: center;
+    }
+}

@@ -1,4 +1,5 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {DomSanitizer} from '@angular/platform-browser';
 
 @Component({
     selector: 'app-background',
@@ -7,12 +8,18 @@ import {Component, OnInit} from '@angular/core';
 })
 export class BackgroundComponent implements OnInit {
 
-    constructor() {
+    @Input() pageData;
+
+    constructor(private _sanitizer: DomSanitizer) {
 
     }
 
     ngOnInit() {
+
     }
 
+    getBackground(image) {
+        return this._sanitizer.bypassSecurityTrustStyle(`url(${image}), linear-gradient(#fff, #ebf5ff)`);
+    }
 
 }

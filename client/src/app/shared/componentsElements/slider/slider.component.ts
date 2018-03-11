@@ -207,8 +207,12 @@ export class SafePipe implements PipeTransform {
             margin-top: 10px;
         }
 
-        .slick-confidence__slide img{
+        .slick-confidence .slick-confidence__slide img {
             width: 100%;
+        }
+
+        .slick-popup {
+            margin-top: 20px;
         }
     `]
 })
