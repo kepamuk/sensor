@@ -130,7 +130,8 @@ ul.menu li a.active {
     .background{
         height: 700px;
     }
-    ul.menu li a {
+    ul.menu li a ,
+    ul.menu li span {
         font-size: 16px;
     }
 

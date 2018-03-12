@@ -38,7 +38,7 @@
     text-decoration: none;
 }
 
-ul.menu_m{
+ul.menu_m {
     background-color: #0079c2;
     padding: 10px 0;
     position: absolute;
@@ -48,15 +48,21 @@ ul.menu_m{
     border-radius: 4px;
     border: 1px solid #fff;
 }
-.logo_wrap ul.menu_m li{
+
+.logo_wrap {
+    position: relative;
+}
+
+.logo_wrap ul.menu_m li {
     display: block;
     margin: 10px 0;
 }
 
-.menu_m{
+.menu_m {
     display: none;
 }
-.show{
+
+.show {
     display: block;
 }
 
@@ -75,7 +81,8 @@ ul.menu li:last-child {
     margin-right: 0;
 }
 
-ul.menu li a {
+ul.menu li a,
+ul.menu li span {
     font-size: 16px;
     border-radius: 15px;
     color: #fff;
@@ -86,6 +93,7 @@ ul.menu li a {
     -ms-transition: .25s background-color;
     -o-transition: .25s background-color;
     transition: .25s background-color;
+    cursor: pointer;
 }
 
 ul.menu li a:hover {
@@ -120,18 +128,27 @@ ul.menu li a:hover {
 }
 
 @media screen and (max-width: 767px) {
-    .hidden-xs{
+    .hidden-xs {
         display: none;
     }
-    .clearf{
+
+    .clearf {
         clear: both;
     }
-    .header-menu{
+
+    .header-menu {
         text-align: center;
     }
-    .logo{
+
+    .logo {
         float: right;
         margin-right: 10px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .header-menu .clearfix{
+        display: none;
     }
 }
 

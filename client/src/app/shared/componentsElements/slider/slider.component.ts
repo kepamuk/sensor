@@ -214,6 +214,11 @@ export class SafePipe implements PipeTransform {
         .slick-popup {
             margin-top: 20px;
         }
+        @media screen and (max-width: 767px) {
+            .slick-slide img{
+                width: auto;
+            }
+        }
     `]
 })
 export class SliderComponent implements OnInit {

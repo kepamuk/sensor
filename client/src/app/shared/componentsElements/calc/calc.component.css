@@ -135,3 +135,9 @@ p{
     margin-bottom: 100px;
     margin-top: 40px;
 }
+
+@media screen and (max-width: 767px) {
+    .wrap_calc{
+        margin-bottom: 10px;
+    }
+}

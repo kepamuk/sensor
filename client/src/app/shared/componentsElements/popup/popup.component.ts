@@ -34,6 +34,15 @@ import {AfterViewInit, Component, Input, OnInit} from '@angular/core';
             color: #ff0000;
             position: absolute;
         }
+        /*.modal-content {*/
+            /*width: 100%;*/
+        /*}*/
+        @media screen and (max-width: 767px) {
+            .modal-content {
+                width: 90%;
+                margin: 30px auto;
+            }
+        }
     `]
 })
 export class PopupComponent implements OnInit {

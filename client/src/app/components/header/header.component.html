@@ -3,17 +3,36 @@
         <div class="row">
             <div class="col-md-3 col-sm-6">
                 <div class="logo_wrap">
-                    <a href="#" class="logo"></a>
-                    <i class="fa fa-bars menu_bar fa-2x" aria-hidden="true"></i>
+                    <a [routerLink]="'/'"
+                       [routerLinkActive]="['active']"
+                       [routerLinkActiveOptions]="{ exact: true }"
+                       class="logo"></a>
+                    <i class="fa fa-bars menu_bar fa-2x"
+                       aria-hidden="true"
+                       (click)="menu = (menu === 'block' ) ? 'none': 'block'"></i>
                     <div class="clearf"></div>
-                    <ul class="menu_m menu">
-                        <li><a routerLink="['/']">Главная</a></li>
-                        <li><a routerLink="['/dlja-detej']">Детский стол</a></li>
-                        <li><a href="#">Стол для логопеда</a></li>
-                        <li><a href="#">Для выставок и презентаций</a></li>
-                        <li><a href="#">Для коммерческих целей</a></li>
-                        <li><a href="#">Мультитач стол</a></li>
-                        <li><a href="#">Наши контакты</a></li>
+                    <ul class="menu_m menu"
+                        [ngStyle]="{'display': menu}">
+                        <li><a [routerLink]="'/'"
+                               [routerLinkActive]="['active']"
+                               [routerLinkActiveOptions]="{ exact: true }">Главная</a></li>
+                        <li><a [routerLink]="['/dlja-detej']"
+                               [routerLinkActive]="['active']"
+                               [routerLinkActiveOptions]="{ exact: true }">Детский стол</a></li>
+                        <li><a [routerLink]="['/interaktivnyj-logopedicheskij-stol']"
+                               [routerLinkActive]="['active']"
+                               [routerLinkActiveOptions]="{ exact: true }">Стол для логопеда</a></li>
+                        <li><a [routerLink]="['/arenda']"
+                               [routerLinkActive]="['active']"
+                               [routerLinkActiveOptions]="{ exact: true }">Для выставок и презентаций</a></li>
+                        <li><a [routerLink]="['/business']"
+                               [routerLinkActive]="['active']"
+                               [routerLinkActiveOptions]="{ exact: true }">Для коммерческих целей</a></li>
+                        <li><a [routerLink]="['/multitouch']"
+                               [routerLinkActive]="['active']"
+                               [routerLinkActiveOptions]="{ exact: true }">Мультитач стол</a></li>
+                        <li><span pageScroll
+                                  href="#map">Наши контакты</span></li>
                     </ul>
                 </div>
             </div>

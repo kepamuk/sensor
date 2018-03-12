@@ -99,12 +99,13 @@
 }
 
 @media screen and (max-width: 991px) {
-    .confidence ul{
-        margin-top: 10px;
+    :host /deep/ .confidence ul{
+        margin-top: 30px;
         margin-left: 0;
         font-size: 0;
+        margin-bottom: 0;
     }
-    .confidence ul li{
+    :host /deep/ .confidence ul li{
         display: inline-block;
         vertical-align: top;
         width: 50%;

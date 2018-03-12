@@ -11,6 +11,11 @@
     border-radius: 6px;
     overflow: hidden;
     height: 250px;
+    max-width: 360px;
+    margin: 0 auto;
+}
+.popular-img img{
+    width: 100%;
 }
 
 .sensor-block h4 {
@@ -195,5 +200,21 @@
     }
     .slick-process{
         margin: 0;
+    }
+}
+@media screen and (max-width: 767px) {
+    .sensor-block{
+        margin-bottom: 24px;
+    }
+    .popup_2{
+        margin: 0;
+    }
+    :host /deep/ button.btn{
+        font-size: 14px;
+        white-space: normal;
+        line-height: 24px;
+    }
+    .popup_part{
+        width: 100%;
     }
 }

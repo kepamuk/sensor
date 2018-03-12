@@ -50,10 +50,10 @@ import {SenderService} from '../../../services/sender.service';
                 <div *ngIf="phone.invalid && (phone.dirty || phone.touched)"
                      class="alert-danger">
                     <div *ngIf="phone.errors.required">
-                        Phone is required.
+                        Требуется телефон.
                     </div>
                     <div *ngIf="phone.errors.pattern">
-                        Phone is not valid.
+                        Не валидный номер.
                     </div>
                 </div>
             </div>
@@ -136,6 +136,14 @@ import {SenderService} from '../../../services/sender.service';
             border-radius: 5px;
             padding-left: 20px;
             margin-bottom: 10px;
+        }
+
+        @media screen and (max-width: 767px) {
+            .popup_3 .popular-img,
+            .popup_3 .popup3_part {
+                width: 100%;
+            }
+
         }
     `]
 })

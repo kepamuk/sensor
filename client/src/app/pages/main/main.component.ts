@@ -17,7 +17,6 @@ export class MainComponent implements OnInit {
         contentService.getContent()
             .subscribe(content => {
                 this.pageData = content[0]['pages']['main'];
-                console.log(this.pageData);
             });
 
         title.setTitle('Сенсорные столы от производителя цена от 95 000 руб');

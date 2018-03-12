@@ -1,6 +1,7 @@
-.my-model-calc{
+.my-model-calc {
     margin-top: 60px;
 }
+
 .my-model-calc h3 {
     font-size: 26px;
     font-family: 'PTSans-Bold';
@@ -11,4 +12,13 @@
     font-size: 16px;
     margin-top: 6px;
     margin-bottom: 28px;
+}
+
+@media screen and (max-width: 767px) {
+    .my-model-calc {
+        margin-top: 10px;
+    }
+    .my-model{
+        margin-bottom: 10px;
+    }
 }
