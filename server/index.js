@@ -4,6 +4,7 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const path = require('path');
 
 const contacts = require('./routes/contacts')(router);
 const goods = require('./routes/goods')(router);
@@ -25,7 +26,7 @@ app.use(cors());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
-app.use(express.static(__dirname + '../client/public_html'));
+app.use(express.static(__dirname + '../../client/dist/'));
 
 app.use('/api/contacts', contacts);
 app.use('/api/sender', sender);
@@ -33,8 +34,8 @@ app.use('/api/goods', goods);
 app.use('/api/content', content);
 app.use('/api/slider', slider);
 
-// app.get('*',(req,res) => {
-//     res.sendFile(path.join(__dirname + '../../public_html/index.html'))
-// });
+app.get('*',(req,res) => {
+    res.sendFile(path.join(__dirname + '../../client/dist/index.html'));
+});
 
 app.listen(port, () => console.log(`Example app listening on port ${[port]}!`));
