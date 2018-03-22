@@ -6,7 +6,8 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class BaseApi {
 
-    private url = 'http://localhost:8080/';
+    // private url = 'http://localhost:8080/';
+    private url = 'http://kepamuuw.beget.tech/';
 
     constructor(public http: HttpClient) {
     }
