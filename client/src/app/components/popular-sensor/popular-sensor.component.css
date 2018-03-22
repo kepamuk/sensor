@@ -53,6 +53,7 @@
 
 .sensor-price {
     margin-top: 30px;
+    min-height: 100px;
 }
 
 .sensor-price__left {
@@ -216,5 +217,8 @@
     }
     .popup_part{
         width: 100%;
+    }
+    .sensor-price{
+        min-height: 0;
     }
 }

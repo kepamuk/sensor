@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ContentService} from '../../services/content.service';
 import {Meta, Title} from '@angular/platform-browser';
+import {seo} from '../../shared/seo';
 
 @Component({
   selector: 'app-multi',
@@ -17,16 +18,8 @@ export class MultiComponent implements OnInit {
         contentService.getContent()
             .subscribe(content => {
                 this.pageData = content[0]['pages']['multi'];
+                seo(content[0]['pages']['multi']['seo'], this.title, this.meta);
             });
-
-        title.setTitle('Интерактивные столы мультитач от 6 до 40 касаний купить');
-        meta.addTags([
-            {name: 'keywords', content: 'интерактивный мультитач стол до 40 касаний купить тач скрин'},
-            {
-                name: 'description',
-                content: 'Купить интерактивный стол с мультитач экраном высокой точности. Быстрая реакция на касания до 20 человек'
-            }
-        ]);
     }
 
   ngOnInit() {

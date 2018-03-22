@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {ContactsService} from '../../services/contacts.service';
-import {Contacts} from '../../models/contacts';
 
 @Component({
     selector: 'app-footer',
@@ -9,7 +8,7 @@ import {Contacts} from '../../models/contacts';
 })
 export class FooterComponent implements OnInit {
 
-    contacts: Contacts;
+    contacts;
 
     lat = 59.88918;
     lng = 30.335264;

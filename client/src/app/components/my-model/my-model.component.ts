@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 
 @Component({
@@ -21,6 +21,8 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
 export class MyModelComponent implements OnInit {
 
     animCalc = 'in';
+    @Input() page;
+    @Input() pageData;
 
     @Output() calcAnim: EventEmitter<any> = new EventEmitter();
 

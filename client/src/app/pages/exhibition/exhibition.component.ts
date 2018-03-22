@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ContentService} from '../../services/content.service';
 import {Meta, Title} from '@angular/platform-browser';
+import {seo} from '../../shared/seo';
 
 @Component({
     selector: 'app-exhibition',
@@ -17,16 +18,8 @@ export class ExhibitionComponent implements OnInit {
         contentService.getContent()
             .subscribe(content => {
                 this.pageData = content[0]['pages']['exhibition'];
+                seo(content[0]['pages']['exhibition']['seo'], this.title, this.meta);
             });
-
-        title.setTitle('Аренда интерактивного стола для презентаций, выставок и музеев в СПб и РФ');
-        meta.addTags([
-            {name: 'keywords', content: 'мулльтимедийный интерактивный стол аренда тач 43 55 дюймов'},
-            {
-                name: 'description',
-                content: 'Сенсорные столы в аренду от 43 до 55 и более дюймов в наличии в СПб и доставка в регионы. Арендовать на мероприятие'
-            }
-        ]);
     }
 
     ngOnInit() {

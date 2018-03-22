@@ -59,7 +59,9 @@ export class SafePipe implements PipeTransform {
                     <div class="col-lg-4 col-lg-offset-1 col-md-6">
                         <h3>{{s.label}}</h3>
                         <p>{{s.text}}</p>
-                        <app-button [styles]="{
+                        <app-button data-target="#call"
+                                    data-toggle="modal"
+                                    [styles]="{
                                   'background-color': 'transparent',
                                   'color': '#0093d1',
                                    'white-space': 'normal',
@@ -214,8 +216,9 @@ export class SafePipe implements PipeTransform {
         .slick-popup {
             margin-top: 20px;
         }
+
         @media screen and (max-width: 767px) {
-            .slick-slide img{
+            .slick-slide img {
                 width: auto;
             }
         }

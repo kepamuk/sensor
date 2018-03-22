@@ -19,7 +19,8 @@
     </div>
     <div class="animCalc"
          [@calculator]="animCalc">
-        <app-calc></app-calc>
+        <app-calc [page]="page"
+                  [pageData]="pageData"></app-calc>
         <div class="clearfix"></div>
     </div>
 

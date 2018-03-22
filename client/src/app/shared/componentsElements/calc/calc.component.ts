@@ -1,7 +1,8 @@
-import {AfterContentInit, Component, OnInit} from '@angular/core';
+import {AfterContentInit, Component, Input, OnInit} from '@angular/core';
+import {NgForm} from '@angular/forms';
+
 import {GoodsService} from '../../../services/goods.service';
 import {SenderService} from '../../../services/sender.service';
-import {NgForm} from '@angular/forms';
 declare var $: any;
 
 @Component({
@@ -55,6 +56,9 @@ export class CalcComponent implements OnInit, AfterContentInit {
     message;
     hide = false;
 
+    @Input() page;
+    @Input() pageData;
+
     constructor(private senderService: SenderService,
                 private goodsService: GoodsService) {
         goodsService.getGoods()
@@ -64,17 +68,16 @@ export class CalcComponent implements OnInit, AfterContentInit {
     }
 
     ngOnInit() {
+
     }
 
     ngAfterContentInit() {
         const self = this;
         $('#kidsPop').on('shown.bs.modal', function () {
-            console.log('shown');
             self.hide = true;
             self.presents = [];
         });
         $('#kidsPop').on('hidden.bs.modal', function () {
-            console.log('hidden');
             self.hide = false;
         });
     }
@@ -110,8 +113,16 @@ export class CalcComponent implements OnInit, AfterContentInit {
     onSubmit(f: NgForm) {
 
         const values = f.value;
+
+        values.id = 'calc';
         values.presents = this.presents;
-        values.valueResult = this.valueResult;
+        values.calc = {
+            summ: this.valueResult,
+            types: f.value.types,
+            diagonal: f.value.diagonal,
+            touch: f.value.touch,
+            options: f.value.options
+        };
 
         this.senderService.send(values)
             .subscribe(res => {

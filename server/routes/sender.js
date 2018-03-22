@@ -6,9 +6,12 @@ module.exports = (router) => {
     router.post('/send', (req, res) => {
 
         if (!req.body.options) req.body.options = '';
+        if (!req.body.calc) req.body.calc = '';
+
         // console.log(req.body);
         const output = `
             <div>
+                <h4>${req.body.id}</h4>
                 <p>
                     <strong>Name:</strong>
                     <span>${req.body.name}</span>
@@ -39,9 +42,13 @@ module.exports = (router) => {
                     <strong>Presents:</strong>
                     <span>${req.body.presents}</span>
                 </p>
-                <p>
+               <p>
                     <strong>ValueCalc:</strong>
-                    <span>${req.body.valueResult}</span>
+                    <span>${req.body.calc.summ}</span>
+                    <span>Types: ${req.body.calc.types}</span>
+                    <span>Diagonal: ${req.body.calc.diagonal}</span>
+                    <span>Touch: ${req.body.calc.touch}</span>
+                    <span>Options: ${req.body.calc.options}</span>
                 </p>
             </div>
         `;

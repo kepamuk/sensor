@@ -3,11 +3,13 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
-                <h2>Соберите свою модель детского сенсорного стола</h2>
+                <h2>
+                    {{pageData.calc?.title }}
+                </h2>
             </div>
             <div class="col-sm-6 col-xs-12">
                 <div class="my_img_main">
-                    <img src="/assets/img/mymodel.png" alt="">
+                    <img src="{{pageData.calc?.img}}" alt="">
                 </div>
             </div>
             <div class="col-sm-6 col-xs-12">
@@ -85,7 +87,6 @@
 
                     <!--[disabled]="f.invalid"-->
                     <app-button data-toggle="modal"
-                                [disabled]="f.invalid"
                                 [styles]="{'background-color': '#0093d1', 'color': '#fff'}"
                                 [hover]="{'background-color': 'transparent', 'color': '#0093d1'}">
                         Выбрать и заказать
@@ -104,7 +105,8 @@
                         {{message.message}}
                     </div>
                 </form>
-                <div class="present_wrap">
+                <div *ngIf="page !== 'main'"
+                     class="present_wrap">
                     <app-button data-toggle="modal"
                                 [attr.data-target]="'#kids'"
                                 [styles]="{
@@ -134,10 +136,7 @@
                           class="present">+ подарок на сумму 19 800 Р</span>
                 </div>
 
-                <p>На данном этапе выбираются комплектующие, чтобы обеспечить необходимую для ваших задач
-                    производительность сенсорного стола. Довольно часто, используем стандартные комбинации
-                    процессора,
-                    оперативной памяти и других комплектующих.</p>
+                <p *ngIf="page !== 'main'">{{pageData.calc?.text}}</p>
 
             </div>
             <div class="clearfix"></div>

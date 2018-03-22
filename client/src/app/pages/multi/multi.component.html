@@ -1,11 +1,11 @@
 <app-background [pageData]="pageData"></app-background>
-<app-capability></app-capability>
+<app-capability [imgCap]="pageData['imgCap']"></app-capability>
 <app-quastions></app-quastions>
-<app-calc></app-calc>
+<app-calc [pageData]="pageData"></app-calc>
 <app-variant></app-variant>
 <app-process></app-process>
 <app-video></app-video>
 <app-confidence></app-confidence>
 <app-table></app-table>
 <app-faq></app-faq>
-<app-seo></app-seo>
+<app-seo [seohtml]="pageData['seohtml']"></app-seo>

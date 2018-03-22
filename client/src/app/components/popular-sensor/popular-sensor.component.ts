@@ -1,4 +1,4 @@
-import {AfterContentInit, Component, ViewChild, ViewContainerRef} from '@angular/core';
+import {AfterContentInit, Component, Input, ViewChild, ViewContainerRef} from '@angular/core';
 import {
     trigger,
     state,
@@ -37,6 +37,9 @@ export class PopularSensorComponent implements AfterContentInit {
 
     presents = [];
     calcAnim;
+
+    @Input() page;
+    @Input() pageData;
 
     // @ViewChild('container', {read: ViewContainerRef}) viewContainerRef;
 

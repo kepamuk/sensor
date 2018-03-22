@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ContentService} from '../../services/content.service';
 import {Meta, Title} from '@angular/platform-browser';
+import {seo} from '../../shared/seo';
 
 @Component({
     selector: 'app-commercial',
@@ -17,16 +18,9 @@ export class CommercialComponent implements OnInit {
         contentService.getContent()
             .subscribe(content => {
                 this.pageData = content[0]['pages']['commerc'];
-            });
+                seo(content[0]['pages']['commerc']['seo'], this.title, this.meta);
 
-        title.setTitle('Интерактивные столы для кафе, ресторанов и друхих бизнесов');
-        meta.addTags([
-            {name: 'keywords', content: 'интерактивные столы для кафе ресторанов недорого для бизнеса цена ниже'},
-            {
-                name: 'description',
-                content: 'Сенсорные столы для кафе увеличивают средний чек на 30% и повышают лояльность посетителей, не требуя затрат на обслуживание.'
-            }
-        ]);
+            });
     }
 
     ngOnInit() {

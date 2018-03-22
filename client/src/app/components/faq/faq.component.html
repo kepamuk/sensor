@@ -14,13 +14,14 @@
                                     <div data-toggle="collapse"
                                          data-parent="#accordion"
                                          [attr.href]="'#collapse' + i"
-                                         class="collapsed">
+                                         class="{{i !== 0 ? 'collapsed' : ''}}">
                                         <span></span>
                                         <span>{{a.title}}</span>
                                     </div>
                                 </h4>
                             </div>
-                            <div [attr.id]="'collapse' + i" class="panel-collapse collapse">
+                            <div [attr.id]="'collapse' + i"
+                                 class="panel-collapse collapse {{i === 0 ? 'in' : ''}}">
                                 <div class="panel-body">
                                     {{a.text}}
                                 </div>

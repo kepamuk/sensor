@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {ContentService} from '../../services/content.service';
 import {Meta, Title} from '@angular/platform-browser';
+
+import {ContentService} from '../../services/content.service';
+import {seo} from '../../shared/seo';
 
 @Component({
     selector: 'app-main',
@@ -17,16 +19,14 @@ export class MainComponent implements OnInit {
         contentService.getContent()
             .subscribe(content => {
                 this.pageData = content[0]['pages']['main'];
+                seo(content[0]['pages']['main']['seo'], this.title, this.meta);
             });
 
-        title.setTitle('Сенсорные столы от производителя цена от 95 000 руб');
-        meta.addTags([
-            {name: 'keywords', content: 'сенсорный самрт стол интерактивный купить цена производителя'},
-            {name: 'description', content: 'Умные сенсорные столы с HD-экраном с программами для школ, детских садов и выставок. Выбирайте'}
-        ]);
+
     }
 
     ngOnInit() {
+
     }
 
 }

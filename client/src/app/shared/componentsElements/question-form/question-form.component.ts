@@ -87,7 +87,9 @@ export class QuestionFormComponent implements OnInit {
     }
 
     onSubmit(f: NgForm) {
-        console.log(f.value);
+        // console.log(f.value);
+
+        f.value.id = 'question';
         this.senderService.send(f.value)
             .subscribe(res => {
                 this.message = res;

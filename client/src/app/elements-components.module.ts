@@ -9,7 +9,6 @@ import {HoverDirective} from './shared/directives/hover.directive';
 import {BtnButtonComponent} from './shared/componentsElements/btn/btn-button.component';
 import {SafePipe, SliderComponent} from './shared/componentsElements/slider/slider.component';
 import {PopupFormComponent} from './shared/componentsElements/popup/popup-form.component';
-import {PopupPresentComponent} from './shared/componentsElements/popup/popup-present.component';
 import {PopupComponent} from './shared/componentsElements/popup/popup.component';
 import {CheckboxComponent} from './shared/componentsElements/checkbox/checkbox.component';
 
@@ -19,7 +18,6 @@ import {CheckboxComponent} from './shared/componentsElements/checkbox/checkbox.c
         SliderComponent,
         CheckboxComponent,
         PopupComponent,
-        PopupPresentComponent,
         PopupFormComponent,
         SafePipe,
         HoverDirective,
@@ -30,7 +28,6 @@ import {CheckboxComponent} from './shared/componentsElements/checkbox/checkbox.c
         SliderComponent,
         CheckboxComponent,
         PopupComponent,
-        PopupPresentComponent,
         PopupFormComponent,
         SafePipe,
         HoverDirective,

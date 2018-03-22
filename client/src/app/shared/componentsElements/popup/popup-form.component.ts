@@ -63,10 +63,9 @@ import {SenderService} from '../../../services/sender.service';
                     {{message.message}}
                 </div>
                 <!--[disabled]="f.invalid"-->
-                <app-button
-                        [disabled]="f.invalid"
-                        [styles]="{'background-color': '#0093d1', 'color': '#fff','min-width':'140px'}"
-                        [hover]="{'background-color': 'transparent', 'color': '#0093d1'}">
+                <app-button [disabled]="f.invalid"
+                            [styles]="{'background-color': '#0093d1', 'color': '#fff','min-width':'140px'}"
+                            [hover]="{'background-color': 'transparent', 'color': '#0093d1'}">
                     Заказать
                 </app-button>
             </div>
@@ -138,12 +137,19 @@ import {SenderService} from '../../../services/sender.service';
             margin-bottom: 10px;
         }
 
+        h4 {
+            margin-bottom: 20px;
+        }
+
         @media screen and (max-width: 767px) {
             .popup_3 .popular-img,
             .popup_3 .popup3_part {
                 width: 100%;
             }
 
+            .popup_3 .popular-img {
+                display: none;
+            }
         }
     `]
 })
@@ -165,11 +171,13 @@ export class PopupFormComponent implements OnInit {
 
     onSubmit(f: NgForm) {
         const values = f.value;
+
         if (!values['options']) {
             values['options'] = {};
         }
         values['options'].goodName = this.goods.name;
         values.presents = this.presents;
+        values.id = 'header_form';
 
         this.senderService.send(values)
             .subscribe(res => {

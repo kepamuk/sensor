@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-seo',
@@ -6,5 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./seo.component.css']
 })
 export class SeoComponent {
+
+  @Input() seohtml;
 
 }

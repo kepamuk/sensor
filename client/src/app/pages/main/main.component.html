@@ -1,7 +1,8 @@
 <app-background [pageData]="pageData"></app-background>
-<app-capability></app-capability>
+<app-capability [imgCap]="pageData['imgCap']"></app-capability>
 <app-quastions></app-quastions>
-<app-popular-sensor></app-popular-sensor>
+<app-popular-sensor [page]="'main'"
+                    [pageData]="pageData"></app-popular-sensor>
 <app-variant></app-variant>
 <app-category-sensor></app-category-sensor>
 <app-effection></app-effection>
@@ -10,4 +11,4 @@
 <app-confidence></app-confidence>
 <app-table></app-table>
 <app-faq></app-faq>
-<app-seo></app-seo>
+<app-seo [seohtml]="pageData['seohtml']"></app-seo>

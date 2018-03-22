@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {combineLatest} from 'rxjs/observable/combineLatest';
 
 import {ContactsService} from '../../services/contacts.service';
-import {Contacts} from '../../models/contacts';
 import {GoodsService} from '../../services/goods.service';
 import {NavigationStart, Router} from '@angular/router';
 
@@ -13,7 +12,7 @@ import {NavigationStart, Router} from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-    contacts: Contacts;
+    contacts;
     goods: any = [];
     menu;
 

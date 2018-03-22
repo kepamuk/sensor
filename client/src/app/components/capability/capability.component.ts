@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ContentService} from '../../services/content.service';
 
 @Component({
@@ -9,6 +9,7 @@ import {ContentService} from '../../services/content.service';
 export class CapabilityComponent implements OnInit {
 
     capability = [];
+    @Input() imgCap;
 
     constructor(private contentService: ContentService) {
         contentService.getContent()

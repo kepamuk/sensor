@@ -16,7 +16,7 @@ const routes: Routes = [
     {path: 'arenda', component: ExhibitionComponent},
     {path: 'business', component: CommercialComponent},
     {path: 'multitouch', component: MultiComponent},
-    {path: '**', component: NotfoundComponent}
+    {path: '**', component: MainComponent}
 ];
 
 @NgModule({
