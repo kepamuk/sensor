@@ -1,5 +1,6 @@
 'use strict';
 const nodemailer = require('nodemailer');
+const config = require('../config');
 
 module.exports = (router) => {
 
@@ -53,33 +54,47 @@ module.exports = (router) => {
             </div>
         `;
 
-        let transporter = nodemailer.createTransport({
+        const smtpTransport = nodemailer.createTransport({
             host: 'smtp.gmail.com',
             port: 587,
             secure: false,
             requireTLS: true,
             auth: {
-                user: 'kepamuk34@gmail.com',
-                pass: 'qqq123ewfqqq'
+                user: config.authEmail.user,
+                pass: config.authEmail.pass
             },
             tls: {
                 rejectUnauthorized: false
             }
         });
 
-        let mailOptions = {
-            from: 'kepamuk34@gmail.com',
-            to: 'kepamuk34@gmail.com',
-            subject: 'Test',
-            text: 'Hello World!',
-            html: output
+        const maillist = config.emails;
+
+        const msg = {
+            from: "******", // sender address
+            subject: "Hello ✔", // Subject line
+            text: "Hello This is an auto generated Email for testing  from node please ignore it  ✔", // plaintext body
+            cc: "*******",
+            html: output // html body
         };
 
-        transporter.sendMail(mailOptions, (error, info) => {
-            if (error) {
-                return console.log(error.message);
-            }
-            res.json({status: 'success', message: 'Сообщение отправлено'});
+
+        maillist.forEach(function (to, i, array) {
+            msg.to = to;
+
+            smtpTransport.sendMail(msg, function (err) {
+                if (err) {
+                    console.log('Sending to ' + to + ' failed: ' + err);
+                    return;
+                } else {
+                    console.log('Sent to ' + to);
+                    res.json({status: 'success', message: 'Сообщение отправлено'});
+                }
+
+                if (i === maillist.length - 1) {
+                    msg.transport.close();
+                }
+            });
         });
 
     });

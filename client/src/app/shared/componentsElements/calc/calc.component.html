@@ -86,7 +86,8 @@
                            required>
 
                     <!--[disabled]="f.invalid"-->
-                    <app-button data-toggle="modal"
+                    <app-button [disabled]="f.invalid"
+                                data-toggle="modal"
                                 [styles]="{'background-color': '#0093d1', 'color': '#fff'}"
                                 [hover]="{'background-color': 'transparent', 'color': '#0093d1'}">
                         Выбрать и заказать
