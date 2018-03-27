@@ -11,6 +11,7 @@ import {SafePipe, SliderComponent} from './shared/componentsElements/slider/slid
 import {PopupFormComponent} from './shared/componentsElements/popup/popup-form.component';
 import {PopupComponent} from './shared/componentsElements/popup/popup.component';
 import {CheckboxComponent} from './shared/componentsElements/checkbox/checkbox.component';
+import {AppRoutingModule} from './app-routing.module';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import {CheckboxComponent} from './shared/componentsElements/checkbox/checkbox.c
         SlickModule.forRoot(),
         TextMaskModule,
         BrowserModule,
-        FormsModule
+        FormsModule,
+        AppRoutingModule
     ]
 })
 export class ElementsComponentsModule {

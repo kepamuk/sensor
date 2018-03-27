@@ -23,7 +23,7 @@ import {SenderService} from '../../../services/sender.service';
             <app-button
                     [disabled]="f.invalid"
                     [styles]="{
-            'background-color': '#ffb90a',
+            'backgroundColor': '#ffb90a',
             'border-radius': '5px',
             'width': '200px',
             'color': 'white',
@@ -32,7 +32,11 @@ import {SenderService} from '../../../services/sender.service';
             'font-family': 'PTSans-Bold',
             'text-shadow': '1.3px 1.6px 4px rgba(9, 12, 18, 0.3)',
             'float': 'right'
-            }">
+            }"
+                    [hover]="{
+                        'backgroundColor': 'rgb(255, 185, 100)'
+            }"
+            >
                 Жду звонка!
             </app-button>
             <p *ngIf="message"
@@ -65,10 +69,12 @@ import {SenderService} from '../../../services/sender.service';
         .questions-input__input:-moz-placeholder { /* Firefox 18- */
             color: #000;
         }
+
         @media screen and (max-width: 767px) {
-            .questions-input__input{
+            .questions-input__input {
                 width: calc(100% - 140px);
             }
+
             :host /deep/ button {
                 width: 130px !important;
             }

@@ -95,10 +95,10 @@
                     <div *ngIf="phone.invalid && (phone.dirty || phone.touched)"
                          class="alert-danger">
                         <div *ngIf="phone.errors.required">
-                            Phone is required.
+                            Введите корректный номер телефона.
                         </div>
                         <div *ngIf="phone.errors.pattern">
-                            Phone is not valid.
+                            Не валидный телефонный номер.
                         </div>
                     </div>
                     <div *ngIf="message"

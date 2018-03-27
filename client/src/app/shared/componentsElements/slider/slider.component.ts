@@ -1,9 +1,8 @@
-import {AfterViewInit, Component, EventEmitter, Input, OnInit, Output, Pipe, PipeTransform} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output, Pipe, PipeTransform} from '@angular/core';
 import {DomSanitizer} from '@angular/platform-browser';
 
 declare var $: any;
 
-// https://www.youtube.com/embed/rs9w5bgtJC8
 @Pipe({name: 'safe'})
 export class SafePipe implements PipeTransform {
     constructor(private sanitizer: DomSanitizer) {
@@ -24,14 +23,15 @@ export class SafePipe implements PipeTransform {
                        class="slick-catSmart"
                        #slickModal="slick-modal"
                        [config]="config">
-                <div ngxSlickItem
+                <a ngxSlickItem
                      class="slick-catSmart__slide"
-                     *ngFor="let s of slides">
+                     *ngFor="let s of slides"
+                     [routerLink]="[s.url]">
                     <div class="img_wrap">
                         <img [src]="s.src" alt="">
                     </div>
                     <p>{{s.label}}</p>
-                </div>
+                </a>
             </ngx-slick>
 
             <ngx-slick *ngSwitchCase="'effection'"
@@ -72,10 +72,10 @@ export class SafePipe implements PipeTransform {
                             Получить консультацию
                         </app-button>
                     </div>
-                    <div class="col-lg-3 col-md-3 col-sm-6">
+                    <div class="col-lg-3 col-md-3 col-sm-6 hidden-xs">
                         <img [src]="s.src1" alt="">
                     </div>
-                    <div class="col-lg-3 col-md-3 col-sm-6">
+                    <div class="col-lg-3 col-md-3 col-sm-6 hidden-xs">
                         <img [src]="s.src2" alt="">
                     </div>
                 </div>
@@ -121,7 +121,7 @@ export class SafePipe implements PipeTransform {
             </ngx-slick>
 
             <ngx-slick class="slick-popup"
-                       *ngSwitchCase="'slick-popup2'"
+                       *ngSwitchCase="'slick-popup0'"
                        #slickModal="slick-modal"
                        [config]="config">
                 <div ngxSlickItem
@@ -165,6 +165,7 @@ export class SafePipe implements PipeTransform {
         .slick-catSmart__slide {
             text-align: center;
             outline: none;
+            cursor: pointer;
         }
 
         .slick-catSmart__slide-effect {

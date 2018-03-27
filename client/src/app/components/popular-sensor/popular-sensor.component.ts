@@ -47,6 +47,7 @@ export class PopularSensorComponent implements AfterContentInit {
         goodsService.getGoods()
             .subscribe(goods => {
                 this.goods = goods;
+                console.log(2);
                 this.states = this.goods.map(() => 'in');
             });
 

@@ -15,7 +15,8 @@ import {SenderService} from '../../../services/sender.service';
                 <img src="{{goods?.img}}" alt="">
             </div>
             <div class="popup3_part">
-                <h4>{{goods?.name}}</h4>
+                <!--<h4>{{goods?.name}}</h4>-->
+                <h4>Получить консультацию специалиста по сенсорным столам</h4>
                 <div *ngIf="popup.substring(0, 4) === 'good'">
                     <span class="present">+ подарок на сумму {{goods?.presentSum}} Р</span>
                     <div class="sensor-price__left">
