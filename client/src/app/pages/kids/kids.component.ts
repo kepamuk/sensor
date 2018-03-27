@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ContentService} from '../../services/content.service';
 import {Meta, Title} from '@angular/platform-browser';
 import {seo} from '../../shared/seo';
+import {GoodsService} from '../../services/goods.service';
 
 @Component({
     selector: 'app-kids',

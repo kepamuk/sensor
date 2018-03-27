@@ -63,7 +63,7 @@ export class CalcComponent implements OnInit, AfterContentInit {
                 private goodsService: GoodsService) {
         goodsService.getGoods()
             .subscribe(goods => {
-                this.slidesKids = goods[2].presents;
+                this.slidesKids = goods[0].presents;
             });
     }
 
