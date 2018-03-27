@@ -1,6 +1,5 @@
 module.exports = {
     emails: [
-        'kepamuk34@gmail.com',
         'smartstoly@gmail.com',
         'rusakov.ekb@gmail.com'
     ],
