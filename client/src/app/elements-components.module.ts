@@ -12,6 +12,7 @@ import {PopupFormComponent} from './shared/componentsElements/popup/popup-form.c
 import {PopupComponent} from './shared/componentsElements/popup/popup.component';
 import {CheckboxComponent} from './shared/componentsElements/checkbox/checkbox.component';
 import {AppRoutingModule} from './app-routing.module';
+import {PhonePipe} from './shared/pipes/phone';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import {AppRoutingModule} from './app-routing.module';
         PopupComponent,
         PopupFormComponent,
         SafePipe,
+        PhonePipe,
         HoverDirective,
         BtnButtonComponent,
         BtnLinkComponent
@@ -31,6 +33,7 @@ import {AppRoutingModule} from './app-routing.module';
         PopupComponent,
         PopupFormComponent,
         SafePipe,
+        PhonePipe,
         HoverDirective,
         BtnButtonComponent,
         BtnLinkComponent

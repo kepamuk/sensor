@@ -34,6 +34,7 @@ import {SliderService} from './services/slider.service';
 import {ContentService} from './services/content.service';
 import {CalcComponent} from './shared/componentsElements/calc/calc.component';
 import {AppRoutingModule} from './app-routing.module';
+import {PhonePipe} from './shared/pipes/phone';
 
 
 @NgModule({
