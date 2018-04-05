@@ -7,7 +7,7 @@ import 'rxjs/add/operator/map';
 export class BaseApi {
 
     // private url = 'http://localhost:8080/';
-    private url = 'http://kepamuuw.beget.tech/';
+    private url = 'http://xn----itbazhagdogcfn6jg.xn--p1ai/';
 
     constructor(public http: HttpClient) {
     }
