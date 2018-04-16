@@ -1,4 +1,4 @@
-import {AfterContentInit, Component, Input, ViewChild, ViewContainerRef} from '@angular/core';
+import {AfterContentInit, Component, Input, OnDestroy, ViewChild, ViewContainerRef} from '@angular/core';
 import {
     trigger,
     state,
@@ -10,6 +10,7 @@ import {
 declare var $: any;
 
 import {GoodsService} from '../../services/goods.service';
+import {Subscription} from "rxjs/Subscription";
 
 @Component({
     selector: 'app-popular-sensor',
@@ -28,7 +29,7 @@ import {GoodsService} from '../../services/goods.service';
     ]
 })
 
-export class PopularSensorComponent implements AfterContentInit {
+export class PopularSensorComponent implements AfterContentInit, OnDestroy {
 
     goods;
     states;
@@ -36,15 +37,13 @@ export class PopularSensorComponent implements AfterContentInit {
     presentSend;
 
     presents = [];
-    calcAnim;
 
     @Input() page;
     @Input() pageData;
-
-    // @ViewChild('container', {read: ViewContainerRef}) viewContainerRef;
+    sub: Subscription;
 
     constructor(private goodsService: GoodsService) {
-        goodsService.getGoods()
+        this.sub = goodsService.getGoods()
             .subscribe(goods => {
                 this.goods = goods;
                 this.states = this.goods.map(() => 'in');
@@ -86,8 +85,9 @@ export class PopularSensorComponent implements AfterContentInit {
 
     }
 
-    onCalc() {
-        console.log(222);
-        this.calcAnim = 'out';
+    ngOnDestroy(): void {
+        if (this.sub) {
+            this.sub.unsubscribe();
+        }
     }
 }
