@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
 import {NgForm} from '@angular/forms';
 
 declare var $: any;
@@ -152,7 +152,8 @@ import {SenderService} from '../../../services/sender.service';
                 display: none;
             }
         }
-    `]
+    `],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PopupFormComponent implements OnInit {
 

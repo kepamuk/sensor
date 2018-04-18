@@ -1,4 +1,12 @@
-import {AfterContentInit, Component, Input, OnDestroy, ViewChild, ViewContainerRef} from '@angular/core';
+import {
+    AfterContentInit,
+    ChangeDetectionStrategy,
+    Component,
+    Input,
+    OnDestroy,
+    ViewChild,
+    ViewContainerRef
+} from '@angular/core';
 import {
     trigger,
     state,
@@ -26,7 +34,8 @@ import {Subscription} from "rxjs/Subscription";
             })),
             transition('in => out', animate('400ms ease-in-out'))
         ])
-    ]
+    ],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 
 export class PopularSensorComponent implements AfterContentInit, OnDestroy {
