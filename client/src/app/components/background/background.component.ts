@@ -1,10 +1,11 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
 import {DomSanitizer} from '@angular/platform-browser';
 
 @Component({
     selector: 'app-background',
     templateUrl: './background.component.html',
-    styleUrls: ['./background.component.css']
+    styleUrls: ['./background.component.css'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BackgroundComponent implements OnInit {
 

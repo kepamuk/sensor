@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import {NgForm} from '@angular/forms';
 import {SenderService} from '../../../services/sender.service';
 
@@ -79,7 +79,8 @@ import {SenderService} from '../../../services/sender.service';
                 width: 130px !important;
             }
         }
-    `]
+    `],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class QuestionFormComponent implements OnInit {
 

@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
 
 @Component({
     selector: 'app-button',
@@ -37,7 +37,8 @@ import {Component, Input} from '@angular/core';
                 text-decoration: none !important;
             }
         `
-    ]
+    ],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BtnButtonComponent {
 

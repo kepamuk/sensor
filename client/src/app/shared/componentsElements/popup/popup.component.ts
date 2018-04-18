@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, Input, OnInit} from '@angular/core';
+import {AfterViewInit, ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
 
 @Component({
     selector: 'app-popup',
@@ -43,7 +43,8 @@ import {AfterViewInit, Component, Input, OnInit} from '@angular/core';
                 margin: 30px auto;
             }
         }
-    `]
+    `],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PopupComponent implements OnInit {
 
