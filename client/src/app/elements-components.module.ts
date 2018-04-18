@@ -1,5 +1,4 @@
 import {NgModule} from '@angular/core';
-import {BrowserModule} from '@angular/platform-browser';
 import {FormsModule} from '@angular/forms';
 import {TextMaskModule} from 'angular2-text-mask';
 import {SlickModule} from 'ngx-slick';
@@ -11,8 +10,10 @@ import {SafePipe, SliderComponent} from './shared/componentsElements/slider/slid
 import {PopupFormComponent} from './shared/componentsElements/popup/popup-form.component';
 import {PopupComponent} from './shared/componentsElements/popup/popup.component';
 import {CheckboxComponent} from './shared/componentsElements/checkbox/checkbox.component';
-import {AppRoutingModule} from './app-routing.module';
 import {PhonePipe} from './shared/pipes/phone';
+import {RouterModule} from "@angular/router";
+import {CommonModule} from "@angular/common";
+import {QuestionFormComponent} from "./shared/componentsElements/question-form/question-form.component";
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import {PhonePipe} from './shared/pipes/phone';
         PhonePipe,
         HoverDirective,
         BtnButtonComponent,
-        BtnLinkComponent
+        BtnLinkComponent,
+        QuestionFormComponent
     ],
     exports: [
         SliderComponent,
@@ -36,14 +38,15 @@ import {PhonePipe} from './shared/pipes/phone';
         PhonePipe,
         HoverDirective,
         BtnButtonComponent,
-        BtnLinkComponent
+        BtnLinkComponent,
+        QuestionFormComponent
     ],
     imports: [
         SlickModule.forRoot(),
         TextMaskModule,
-        BrowserModule,
         FormsModule,
-        AppRoutingModule
+        RouterModule,
+        CommonModule,
     ]
 })
 export class ElementsComponentsModule {

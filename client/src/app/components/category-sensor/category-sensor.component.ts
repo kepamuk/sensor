@@ -13,7 +13,7 @@ export class CategorySensorComponent implements OnInit, OnDestroy {
     sub: Subscription;
 
     constructor(private sliderService: SliderService) {
-        this.sliderService.getSliders()
+        this.sub = this.sliderService.getSliders()
             .subscribe((data) => {
                 this.slider = data[0]['category-sensor'];
             });
