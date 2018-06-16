@@ -20,7 +20,8 @@ export class CapabilityComponent implements OnInit, OnDestroy {
         this.sub = this.contentService.getContent()
             .subscribe(content => {
                 this.capability = content[0]['capability'];
-                console.log(this.capability);
+                // console.log(this.capability);
+
             });
     }
 
