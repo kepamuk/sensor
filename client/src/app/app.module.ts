@@ -21,7 +21,6 @@ import {HeaderComponent} from "./components/header/header.component";
 
 import {FormsModule} from "@angular/forms";
 import {TextMaskModule} from "angular2-text-mask";
-import {Ng2PageScrollModule} from "ng2-page-scroll";
 import {HttpClientModule} from "@angular/common/http";
 import {AgmCoreModule} from "@agm/core";
 import {ElementsComponentsModule} from "./elements-components.module";
@@ -51,7 +50,6 @@ import {MainComponentsModule} from "./main-components.module";
         }),
         FormsModule,
         TextMaskModule,
-        Ng2PageScrollModule,
         HttpClientModule,
         BrowserAnimationsModule,
         AppRoutingModule,

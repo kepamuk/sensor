@@ -16,6 +16,7 @@ import {ConfidenceComponent} from "./components/confidence/confidence.component"
 import {NgxGalleryModule} from "ngx-gallery";
 import {TableComponent} from "./components/table/table.component";
 import {FaqComponent} from "./components/faq/faq.component";
+import {Ng2PageScrollModule} from 'ng2-page-scroll';
 
 
 @NgModule({
@@ -52,6 +53,7 @@ import {FaqComponent} from "./components/faq/faq.component";
         FormsModule,
         TextMaskModule,
         NgxGalleryModule,
+        Ng2PageScrollModule
     ]
 })
 export class MainComponentsModule {

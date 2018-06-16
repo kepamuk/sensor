@@ -35,7 +35,7 @@ import {Subscription} from "rxjs/Subscription";
             transition('in => out', animate('400ms ease-in-out'))
         ])
     ],
-    changeDetection: ChangeDetectionStrategy.OnPush
+    // changeDetection: ChangeDetectionStrategy.OnPush
 })
 
 export class PopularSensorComponent implements AfterContentInit, OnDestroy {
