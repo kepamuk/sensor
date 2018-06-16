@@ -28,7 +28,7 @@
 .contact a,
 .contact span {
     color: #0093d1;
-    font-size: 16px;
+    font-size: 14px;
     text-decoration: underline;
     cursor: pointer;
 }
@@ -113,6 +113,10 @@ ul.menu li a:hover {
     button.btn {
         font-size: 14px;
     }
+    .contact span{
+        display: block;
+        width: 100%;
+    }
 
     :host /deep/ .btn {
         font-size: 14px;
@@ -128,6 +132,10 @@ ul.menu li a:hover {
 @media screen and (max-width: 991px) {
     .header-menu {
         margin: 14px 0;
+    }
+    .contact span{
+        display: inline-block;
+        width: auto;
     }
 }
 

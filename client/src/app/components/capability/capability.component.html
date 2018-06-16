@@ -4,11 +4,13 @@
             <div class="col-xs-12">
                 <h2>Возможности интерактивных смарт столов нашего производства</h2>
             </div>
+
             <div class="clearfix"></div>
             <div class="col-lg-8 col-md-6">
                 <img class="capability_img" src="{{imgCap}}" alt="">
             </div>
             <div class="col-lg-4 col-md-6">
+                <!--{{capability | json}}-->
                 <ul>
                     <li *ngFor="let c of capability">
                         <h5>{{c.label}}</h5>

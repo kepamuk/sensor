@@ -1,0 +1,17 @@
+@font-face {
+    font-family: 'PTSans-Regular';
+    src: url('../fonts/pts-regular/PTSans-Regular.woff') format('woff'),
+    url('../fonts/pts-regular/PTSans-Regular.ttf') format('truetype'),
+    url('../fonts/pts-regular/PTSans-Regular.svg#PTSans-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PTSans-Bold';
+    src: url('../fonts/pts-bold/PTSans-Bold.woff') format('woff'),
+    url('../fonts/pts-bold/PTSans-Bold.ttf') format('truetype'),
+    url('../fonts/pts-bold/PTSans-Bold.svg#PTSans-Bold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

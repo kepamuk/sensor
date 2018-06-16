@@ -5,9 +5,9 @@ import {Subscription} from "rxjs/Subscription";
 declare var $: any;
 
 @Component({
-  selector: 'app-process',
-  templateUrl: './process.component.html',
-  styleUrls: ['./process.component.css']
+    selector: 'app-process',
+    templateUrl: './process.component.html',
+    styleUrls: ['./process.component.css']
 })
 export class ProcessComponent implements OnInit, OnDestroy {
 
@@ -21,14 +21,14 @@ export class ProcessComponent implements OnInit, OnDestroy {
             });
     }
 
-  ngOnInit() {
-      $('.btn-proc').on('click', function () {
-          $('.slick-dots > li').eq($(this).data( 'attr' )).trigger( 'click' );
-      });
-  }
+    ngOnInit() {
+        $('.btn-proc').on('click', function () {
+            $('.slick-dots > li').eq($(this).data('attr')).trigger('click');
+        });
+    }
 
     ngOnDestroy(): void {
-        if(this.sub) {
+        if (this.sub) {
             this.sub.unsubscribe();
         }
     }

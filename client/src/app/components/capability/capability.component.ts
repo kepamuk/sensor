@@ -11,20 +11,22 @@ import {Subscription} from "rxjs/Subscription";
 export class CapabilityComponent implements OnInit, OnDestroy {
 
     // capability = [{label: "Любой размер, форма и цвет", text: "Они могут быть не больше журнального столика или иметь, например, диагональ 3 метра."}];
-    capability = [];
+    capability: any = [];
     @Input() imgCap;
 
     sub: Subscription;
 
     constructor(private contentService: ContentService) {
-        this.sub = contentService.getContent()
+        this.sub = this.contentService.getContent()
             .subscribe(content => {
                 this.capability = content[0]['capability'];
-                // console.log(this.capability)asdasdsasdasdasdsa5555555555;
+                // console.log(this.capability);
+
             });
     }
 
     ngOnInit() {
+
     }
 
     ngOnDestroy(): void {

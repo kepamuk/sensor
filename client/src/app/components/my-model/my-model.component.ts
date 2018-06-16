@@ -20,7 +20,7 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
 })
 export class MyModelComponent implements OnInit {
 
-    animCalc = 'in';
+    animCalc = 'out';
     @Input() page;
     @Input() pageData;
 
