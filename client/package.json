@@ -1,5 +1,5 @@
 {
-  "name": "client",
+  "name": "сенсорные-столы.рф",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
@@ -23,6 +23,7 @@
     "@angular/router": "6.0.5",
     "core-js": "^2.4.1",
     "ng2-go-top-button": "^4.1.0",
+    "npm": "^6.1.0",
     "rxjs": "^6.2.1",
     "zone.js": "^0.8.26"
   },

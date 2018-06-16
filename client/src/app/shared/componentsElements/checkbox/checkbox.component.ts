@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
     selector: 'app-checkbox',
@@ -45,7 +45,8 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
         .checkbox_wrap input:checked ~ .checkmark {
             display: block;
         }
-    `]
+    `],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CheckboxComponent implements OnInit {
 

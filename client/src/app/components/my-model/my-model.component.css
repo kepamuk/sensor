@@ -1,5 +1,6 @@
 .my-model-calc {
     margin-top: 60px;
+    text-align: center;
 }
 
 .my-model-calc h3 {
@@ -10,8 +11,10 @@
 .my-model-calc p {
     max-width: 600px;
     font-size: 16px;
-    margin-top: 6px;
-    margin-bottom: 28px;
+    /*margin-top: 6px;*/
+    /*margin-bottom: 28px;*/
+    text-align: center;
+    margin: 0 auto;
 }
 
 @media screen and (max-width: 767px) {

@@ -1,102 +1,57 @@
 import {NgModule} from '@angular/core';
-import {BrowserModule} from '@angular/platform-browser';
-import {Ng2PageScrollModule} from 'ng2-page-scroll';
-import {HttpClientModule} from '@angular/common/http';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {FormsModule} from '@angular/forms';
-import {TextMaskModule} from 'angular2-text-mask';
-import {AgmCoreModule} from '@agm/core';
-import {NgxGalleryModule} from 'ngx-gallery';
-
-import {BackgroundComponent} from './components/background/background.component';
-import {ElementsComponentsModule} from './elements-components.module';
-import {CapabilityComponent} from './components/capability/capability.component';
-import {CategorySensorComponent} from './components/category-sensor/category-sensor.component';
-import {ConfidenceComponent} from './components/confidence/confidence.component';
-import {EffectionComponent} from './components/effection/effection.component';
-import {FaqComponent} from './components/faq/faq.component';
-import {FooterComponent} from './components/footer/footer.component';
-import {HeaderComponent} from './components/header/header.component';
-import {MyModelComponent} from './components/my-model/my-model.component';
-import {PopularSensorComponent} from './components/popular-sensor/popular-sensor.component';
-import {ProcessComponent} from './components/process/process.component';
-import {QuastionsComponent} from './components/quastions/quastions.component';
-import {QuestionFormComponent} from './shared/componentsElements/question-form/question-form.component';
-import {SeoComponent} from './components/seo/seo.component';
-import {TableComponent} from './components/table/table.component';
-import {VariantComponent} from './components/variant/variant.component';
-import {VideoComponent} from './components/video/video.component';
-
-import {GoodsService} from './services/goods.service';
-import {SenderService} from './services/sender.service';
-import {ContactsService} from './services/contacts.service';
-import {SliderService} from './services/slider.service';
-import {ContentService} from './services/content.service';
-import {CalcComponent} from './shared/componentsElements/calc/calc.component';
-import {AppRoutingModule} from './app-routing.module';
+import {SeoComponent} from "./components/seo/seo.component";
+import {BackgroundComponent} from "./components/background/background.component";
+import {RouterModule} from "@angular/router";
+import {CommonModule} from "@angular/common";
+import {ElementsComponentsModule} from "./elements-components.module";
+import {CapabilityComponent} from "./components/capability/capability.component";
+import {QuastionsComponent} from "./components/quastions/quastions.component";
+import {CalcComponent} from "./shared/componentsElements/calc/calc.component";
+import {FormsModule} from "@angular/forms";
+import {TextMaskModule} from "angular2-text-mask";
+import {VariantComponent} from "./components/variant/variant.component";
+import {ProcessComponent} from "./components/process/process.component";
+import {VideoComponent} from "./components/video/video.component";
+import {ConfidenceComponent} from "./components/confidence/confidence.component";
+import {NgxGalleryModule} from "ngx-gallery";
+import {TableComponent} from "./components/table/table.component";
+import {FaqComponent} from "./components/faq/faq.component";
 
 
 @NgModule({
     declarations: [
+        SeoComponent,
         BackgroundComponent,
         CapabilityComponent,
-        CategorySensorComponent,
-        ConfidenceComponent,
-        EffectionComponent,
-        FaqComponent,
-        FooterComponent,
-        HeaderComponent,
-        MyModelComponent,
-        PopularSensorComponent,
-        ProcessComponent,
         QuastionsComponent,
-        QuestionFormComponent,
-        SeoComponent,
-        TableComponent,
+        CalcComponent,
         VariantComponent,
+        ProcessComponent,
         VideoComponent,
-        CalcComponent
+        ConfidenceComponent,
+        TableComponent,
+        FaqComponent,
     ],
     exports: [
+        SeoComponent,
         BackgroundComponent,
         CapabilityComponent,
-        CategorySensorComponent,
-        ConfidenceComponent,
-        EffectionComponent,
-        FaqComponent,
-        FooterComponent,
-        HeaderComponent,
-        MyModelComponent,
-        PopularSensorComponent,
-        ProcessComponent,
         QuastionsComponent,
-        QuestionFormComponent,
-        SeoComponent,
-        TableComponent,
+        CalcComponent,
         VariantComponent,
+        ProcessComponent,
         VideoComponent,
-        CalcComponent
+        ConfidenceComponent,
+        TableComponent,
+        FaqComponent,
     ],
     imports: [
-        NgxGalleryModule,
+        RouterModule,
+        CommonModule,
         ElementsComponentsModule,
-        BrowserModule,
-        AgmCoreModule.forRoot({
-            apiKey: 'AIzaSyCXpNCVM87m5OzYx5XBciW_n2elGQkhZZI'
-        }),
         FormsModule,
         TextMaskModule,
-        Ng2PageScrollModule,
-        HttpClientModule,
-        BrowserAnimationsModule,
-        AppRoutingModule
-    ],
-    providers: [
-        ContactsService,
-        GoodsService,
-        SenderService,
-        ContentService,
-        SliderService
+        NgxGalleryModule,
     ]
 })
 export class MainComponentsModule {
