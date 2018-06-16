@@ -1,12 +1,12 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-
-import {MainComponent} from './pages/main/main.component';
 import {KidsComponent} from './pages/kids/kids.component';
+import {MainComponent} from './pages/main/main.component';
+import {MultiComponent} from './pages/multi/multi.component';
 import {CommercialComponent} from './pages/commercial/commercial.component';
 import {ExhibitionComponent} from './pages/exhibition/exhibition.component';
 import {LogopedComponent} from './pages/logoped/logoped.component';
-import {MultiComponent} from './pages/multi/multi.component';
+
 
 const routes: Routes = [
     {path: '', component: MainComponent},

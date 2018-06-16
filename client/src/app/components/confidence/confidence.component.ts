@@ -1,5 +1,5 @@
-import {Component, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
-import {NgxGalleryAnimation, NgxGalleryImage, NgxGalleryOptions} from 'ngx-gallery';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {NgxGalleryImage, NgxGalleryOptions} from 'ngx-gallery';
 import {SliderService} from '../../services/slider.service';
 import {ContentService} from '../../services/content.service';
 import {combineLatest} from "rxjs/observable/combineLatest";
