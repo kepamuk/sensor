@@ -6,7 +6,7 @@ import {Subscription} from "rxjs/Subscription";
     selector: 'app-capability',
     templateUrl: './capability.component.html',
     styleUrls: ['./capability.component.css'],
-    changeDetection: ChangeDetectionStrategy.OnPush
+    // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CapabilityComponent implements OnInit, OnDestroy {
 
@@ -17,11 +17,10 @@ export class CapabilityComponent implements OnInit, OnDestroy {
     sub: Subscription;
 
     constructor(private contentService: ContentService) {
-        this.sub = this.contentService.getContent()
+        this.sub = contentService.getContent()
             .subscribe(content => {
                 this.capability = content[0]['capability'];
                 // console.log(this.capability);
-
             });
     }
 
